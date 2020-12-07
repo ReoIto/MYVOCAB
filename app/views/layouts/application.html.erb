@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyVocab</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+        <div class="header_contents">
+          <div class="header_name"><a href="/">MYVOCAB</a></div>
+          <div class="header_menu">
+            <ul>
+              <li>
+                <%= link_to("/posts/index") do %>
+                  <i class="fas fa-clipboard-list"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("#") do %>
+                  <i class="fas fa-bookmark"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("/posts/new") do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("/posts/new") do %>
+                  <i class="fas fa-cog"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("#") do %>
+                  LOGIN
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("#") do %>
+                  SIGNUP
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <!-- Flash message -->
+    <% if flash[:notice] %>
+      <div class="flash">
+          <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+
+  </body>
+</html>

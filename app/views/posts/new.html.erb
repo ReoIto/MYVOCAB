@@ -1,0 +1,22 @@
+<div class="main posts_new">
+  <div class="container">
+    <h1 class="form_heading">NEW VOCAB</h1>
+    <%= form_tag("/posts/create") do %>
+    <div class="form">
+      <div class="form_body">
+        <input type="text" name="content">
+        <input type="text" name="meaning">
+        <div class="input_title">例文</div>
+        <input type="text" name="example">
+        <div class="input_title">類義語</div>
+        <input type="text" name="synonyms">
+        <div class="input_title">対義語</div>
+        <input type="text" name="antonyms">
+        <div class="input_title">メモ</div>
+        <textarea name="note"></textarea>
+        <input type="submit" value="ENTER">
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
