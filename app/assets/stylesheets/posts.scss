@@ -1,0 +1,111 @@
+/* posts/index ================================ */
+.posts_index {
+  padding-top: 120px;
+}
+
+.posts_index_item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 1px 7px #8aadc5;
+  font-size: 30px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.post_left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.post_user_name a {
+  font-weight: 600;
+}
+
+.post_user_name a:hover {
+  color: #3ecdc6;
+}
+
+.post_left {
+  float: left;
+  width: 10%;
+}
+
+.post_right {
+  float: left;
+  width: 90%;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.posts_show {
+
+  padding-top: 120px;
+}
+
+.posts_show form {
+  display: inline;
+}
+
+.posts_show_item {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+}
+
+.posts_show_item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.posts_show_item .post_user_name a {
+  vertical-align: middle;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.posts_show_item p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.post_time {
+  color: #8899a6;
+  margin-bottom: 10px;
+}
+
+.post_menus {
+  float: right;
+}
+
+.post_menus a, .post_menus input {
+  color: #8899a6;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* posts/new ================================*/
+.posts_new {
+  padding-top: 120px;
+}
+
+.posts_new textarea {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 140px;
+  border: 1px solid rgb(216, 218, 223);
+  resize: none;
+}
+
+.posts_new textarea::-webkit-input-placeholder {
+  font-size: 24px;
+  opacity: 0.5;
+}
