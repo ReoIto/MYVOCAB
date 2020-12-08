@@ -9,12 +9,13 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new
   end
 
   def create
     @post = Post.new(content: params[:content], meaning: params[:meaning], example: params[:example], synonyms: params[:synonyms], antonyms: params[:antonyms], note: params[:note])
     if @post.save
+      flash[:notice] = "New list has been created."
       redirect_to("/posts/index")
     else
       render("posts/new")
@@ -34,7 +35,7 @@ class PostsController < ApplicationController
     @post.antonyms = params[:antonyms]
     @post.note     = params[:note]
     if @post.save
-      flash[:notice] = "The list has edited."
+      flash[:notice] = "The list has been edited."
       redirect_to("/posts/index")
     else
       render("posts/edit")
@@ -44,6 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
+    flash[:notice] = "the list has been deleted."
     redirect_to("/posts/index")
   end
 end
