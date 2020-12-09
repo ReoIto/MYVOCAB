@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 /* users/index ================================ */
+
+/* .mainはuser関係の全ページに適応されてる */
+.main {
+  padding-top: 120px;
+}
+
+
 .users-heading {
   font-weight: 300;
   margin: 60px 0 20px;
@@ -50,7 +57,6 @@
 /* users/show ================================ */
 .user-show {
   text-align: center;
-  padding-top: 200px;
 }
 
 .user {
@@ -117,8 +123,4 @@
 /* users/new, users/edit ================================ */
 .users-form input {
   margin-bottom: 15px;
-}
-
-.users-new {
-  padding-top: 120px;
 }
