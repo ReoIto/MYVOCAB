@@ -117,41 +117,41 @@ header {
   padding-left: 30px;
 }
 
-.header_contents {
+.header-contents {
   height: 80px;
 }
 
-.header_name {
+.header-name {
   display: inline-block;
   line-height: 80px;
   font-size: 40px;
 }
 
-.header_name a {
+.header-name a {
   text-decoration: none;
   color: #7c7575;
   letter-spacing: 2px;
 }
 
-.header_menu {
+.header-menu {
   float:right;
   height: 80px;
   margin-right: 50px;
 }
 
-.header_menu ul {
+.header-menu ul {
   display: flex;
   list-style: none;
   line-height: 80px;
 }
 
-.header_menu li {
+.header-menu li {
   margin-left: 15px;
   padding: 0 5px;
   font-size: x-large;
 }
 
-.header_menu a {
+.header-menu a {
   text-decoration: none;
   color: #7c7575;
 }
