@@ -14,7 +14,13 @@
   <body>
     <header>
         <div class="header-contents">
-          <div class="header-name"><a href="/">MYVOCAB</a></div>
+          <div class="header-name">
+            <% if @current_user %>
+              <%= link_to("MY VOCAB", "/posts/index") %>
+            <% else %>
+              <%= link_to("MY VOCAB", "/") %>
+            <% end %>
+          </div>
           <div class="header-menu">
             <ul>
             <% if @current_user %>
