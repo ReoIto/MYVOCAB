@@ -1,11 +1,11 @@
-<div class="main posts_new">
+<div class="main posts-new">
   <div class="container">
-    <h1 class="form_heading">EDIT</h1>
+    <h1 class="form-heading">EDIT</h1>
     <%= form_tag("/posts/#{@post.id}/update") do %>
     <div class="form">
-      <div class="form_body">
+      <div class="form-body">
         <% @post.errors.full_messages.each do |message| %>
-            <div class="form_error">
+            <div class="form-error">
               <%= message %>
             </div>
           <% end %>
