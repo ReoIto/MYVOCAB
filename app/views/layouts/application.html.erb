@@ -17,10 +17,10 @@
           <div class="header-name"><a href="/">MYVOCAB</a></div>
           <div class="header-menu">
             <ul>
-            <% if session[:user_id] %>
+            <% if @current_user %>
               <!-- being logged in -->
               <li>
-                現在ログインしているユーザーのid:<%= session[:user_id] %>
+                <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
               </li>
               <li>
                 <%= link_to("/posts/new") do %>
