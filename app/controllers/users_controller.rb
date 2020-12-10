@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+
   protect_from_forgery :except => [:create]
 
   def show
@@ -26,10 +28,11 @@ class UsersController < ApplicationController
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
     end
 
-      if @user.save
-        redirect_to("/users/#{@user.id}")
-        flash[:notice] = "Your account has been created."
-      else
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to("/users/#{@user.id}")
+      flash[:notice] = "Your account has been created."
+    else
       render("users/new")
     end
   end
