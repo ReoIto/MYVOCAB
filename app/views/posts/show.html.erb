@@ -1,16 +1,16 @@
-<div class="main posts_show">
+<div class="main posts-show">
   <div class="container">
-    <div class="posts_show_item">
+    <div class="posts-show-item">
      <p><%= @post.content %></p>
      <p><%= @post.meaning %></p>
      <p><%= @post.example %></p>
      <p><%= @post.synonyms %></p>
      <p><%= @post.antonyms %></p>
      <p><%= @post.note %></p>
-     <div class="post_time">
+     <div class="post-time">
        <%= @post.created_at %>
      </div>
-     <div class="post_menus">
+     <div class="post-menus">
        <%= link_to("EDIT", "/posts/#{@post.id}/edit") %>
        <%= link_to("DELETE", "/posts/#{@post.id}/destroy", {method:"post"}) %>
      </div>
