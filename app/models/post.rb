@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   validates :synonyms, {length: {maximum: 100}}
   validates :antonyms, {length: {maximum: 100}}
   validates :note, {length: {maximum: 300}}
+  validates :user_id, {presence: true}
 end

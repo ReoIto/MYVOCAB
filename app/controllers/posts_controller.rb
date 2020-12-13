@@ -16,7 +16,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content], meaning: params[:meaning], example: params[:example], synonyms: params[:synonyms], antonyms: params[:antonyms], note: params[:note])
+    @post = Post.new(
+                    content: params[:content],
+                    meaning: params[:meaning],
+                    example: params[:example],
+                    synonyms: params[:synonyms],
+                    antonyms: params[:antonyms],
+                    note: params[:note],
+                    user_id: @current_user.id
+                    )
     if @post.save
       flash[:notice] = "New list has been created."
       redirect_to("/posts/index")

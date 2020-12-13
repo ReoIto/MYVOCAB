@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_161521) do
+ActiveRecord::Schema.define(version: 2020_12_13_144158) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_161521) do
     t.text "synonyms"
     t.text "antonyms"
     t.text "note"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
