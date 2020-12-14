@@ -2,6 +2,12 @@
   <div class="container">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_iamges/#{post.user.image_name}" %>">
+        </div>
+        <div class="post_right">
+          <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+        </div>
       <%= link_to(post.content, "/posts/#{post.id}") %>
       </div>
     <% end %>
