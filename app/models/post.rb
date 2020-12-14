@@ -6,4 +6,9 @@ class Post < ApplicationRecord
   validates :antonyms, {length: {maximum: 100}}
   validates :note, {length: {maximum: 300}}
   validates :user_id, {presence: true}
+
+  def user
+    return User.find_by(id: self.user_id)
+  end
+
 end
