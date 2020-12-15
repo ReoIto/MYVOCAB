@@ -26,16 +26,18 @@
             <% if @current_user %>
               <!-- being logged in -->
               <li>
-                <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-              </li>
-              <li>
                 <%= link_to("/posts/new") do %>
                   <i class="fas fa-edit"></i>
                 <% end %>
               </li>
               <li>
                 <%= link_to("/posts/index") do %>
-                  <i class="fas fa-clipboard-list"></i>
+                  <i class="fas fa-users"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("/posts/#{@current_user.id}/index") do %>
+                  <i class="fas fa-user"></i>
                 <% end %>
               </li>
               <li>
@@ -49,7 +51,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to("/") do %>
+                <%= link_to("/users/#{@current_user.id}") do %>
                   <i class="fas fa-cog"></i>
                 <% end %>
               </li>
