@@ -1,4 +1,4 @@
-<div class="main posts-show">
+wwww<div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
@@ -14,6 +14,14 @@
      <div class="post-time">
        <%= @post.created_at %>
      </div>
+     <% if Like.find_by(user_id:@current_user, post_id: @post.id) %>
+      <div class="like-box">
+        <%= link_to("Not Like", "/likes/#{@post.id}/destroy", {method: "post"}) %>
+     <% else %>
+        <%= link_to("Like!", "/likes/#{@post.id}/create", {method: "post"}) %>
+      </div>
+     <% end %>
+
      <% if @post.user_id == @current_user.id %>
      <div class="post-menus">
        <%= link_to("EDIT", "/posts/#{@post.id}/edit") %>
