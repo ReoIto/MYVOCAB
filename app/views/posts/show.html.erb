@@ -14,10 +14,12 @@
      <div class="post-time">
        <%= @post.created_at %>
      </div>
+     <% if @post.user_id == @current_user.id %>
      <div class="post-menus">
        <%= link_to("EDIT", "/posts/#{@post.id}/edit") %>
        <%= link_to("DELETE", "/posts/#{@post.id}/destroy", {method:"post"}) %>
      </div>
+     <% end %>
    </div>
   </div>
 </div>
