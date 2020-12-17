@@ -14,12 +14,12 @@ class PostsController < ApplicationController
     @id = params[:id]
     @post = Post.find_by(id: params[:id] )
     @user = @post.user
+    @likes_count = Like.where(post_id: @post.id).count
   end
 
   def likes
     @user = User.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
-
   end
 
   def new
