@@ -10,24 +10,17 @@ class UsersController < ApplicationController
   end
 
   def new
-
     @user = User.new
-
   end
 
   def create
-    @user = User.new(name: params[:name],
+    @user = User.new(
+                     name: params[:name],
                      email: params[:email],
                      birthday: params[:birthday],
                      password: params[:password],
-                     image_name: params[:image]
+                     image_name: "default_user_image.gif"
                     )
-
-    if params[:image]
-      @user.image_name = "#{@user.name}.jpg"
-      image = params[:image]
-      File.binwrite("public/user_images/#{@user.image_name}", image.read)
-    end
 
     if @user.save
       session[:user_id] = @user.id
@@ -66,8 +59,8 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by(email: params[:email], password: params[:password])
-      if @user
+    @user = User.find_by(email: params[:email])
+      if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         flash[:notice] = "You've successfully logged in."
         redirect_to("/posts/index")
