@@ -16,8 +16,10 @@
         <div class="header-contents">
           <div class="header-name">
             <% if @current_user %>
+            <!-- being logged in -->
               <%= link_to("MY VOCAB", "/posts/index") %>
             <% else %>
+            <!-- being NOT logged in -->
               <%= link_to("MY VOCAB", "/") %>
             <% end %>
           </div>
@@ -25,6 +27,15 @@
             <ul>
             <% if @current_user %>
               <!-- being logged in -->
+
+              <!-- search bar -->
+              <%= search_form_for @search, url: posts_index_path do |f| %>
+              <div class="search_bar">
+                <%= f.search_field :content_or_meaning_cont_any %>
+                <div class="btn"><%= f.submit "Search" %></div>
+              </div>
+              <% end %>
+
               <li>
                 <%= link_to("/posts/new") do %>
                   <i class="fas fa-edit"></i>
