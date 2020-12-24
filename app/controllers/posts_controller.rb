@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :ensure_current_user, {only: [:edit, :update, :destroy]}
 
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -78,4 +79,10 @@ class PostsController < ApplicationController
         redirect_to("/posts/index")
       end
   end
+
+  def searched_index
+    @search_params = posts_search_params
+    @searched_posts = Post.where(content: @search_params[:keyword])
+  end
+
 end
