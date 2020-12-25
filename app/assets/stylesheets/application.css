@@ -151,14 +151,20 @@ header {
   color: #7c7575;
 }
 
-.search-nav {
-  display: flex;
-  width: 200px;
-  margin-right: 70px;
+.search_bar {
+    display: flex;
 }
 
-input, select {
+.search_bar input {
     vertical-align: middle;
-    padding: 7px;
-    margin-bottom: 7px;
+    padding: 5px;
+    width: 300px;
+    height: 35px;
+}
+
+.search_btn input {
+  width: 60px;
+  background-color: #7c7575;
+  color: white;
+  opacity: 0.7;
 }
