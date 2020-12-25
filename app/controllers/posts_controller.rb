@@ -4,7 +4,9 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @q= Post.ransack(params[:q])
+    @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page])
+    #@posts = Post.page(params[:page]).order(created_at: :desc)
   end
 
   def personal_index
@@ -80,9 +82,9 @@ class PostsController < ApplicationController
       end
   end
 
-  def searched_index
-    @search_params = posts_search_params
-    @searched_posts = Post.where(content: @search_params[:keyword])
-  end
+  # def searched_index
+    #@search_params = posts_search_params
+    #@searched_posts = Post.where(content: @search_params[:keyword])
+  #end
 
 end
