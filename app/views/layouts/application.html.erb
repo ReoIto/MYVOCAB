@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
@@ -32,7 +32,7 @@
               <%= search_form_for @search, url: posts_index_path do |f| %>
               <div class="search_bar">
                 <%= f.search_field :content_or_meaning_cont_any %>
-                <div class="btn"><%= f.submit "Search" %></div>
+                <div class="search_btn"><%= f.submit "Search" %></div>
               </div>
               <% end %>
 
