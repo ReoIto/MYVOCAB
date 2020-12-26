@@ -31,7 +31,7 @@
               <!-- search bar -->
               <%= search_form_for @search, url: posts_index_path do |f| %>
               <div class="search_bar">
-                <%= f.search_field :content_or_meaning_cont_any %>
+                <%= f.search_field :content_or_meaning_cont %>
                 <div class="search_btn"><%= f.submit "Search" %></div>
               </div>
               <% end %>
