@@ -1,9 +1,23 @@
 <div class="main posts-index">
   <%= image_tag 'note_image.png' %>
   <div class="container">
-   <% @posts.each do |post| %>
-    <div class="posts-index-item">
-      <div class="post-left">
+
+    <% if @searched_posts %>
+      <% @searched_posts.each do |result| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{result.user.image_name}" %>">
+        </div>
+        <div class="post_right">
+          <%= link_to(result.user.name, "/users/#{result.user.id}" ) %>
+        </div>
+          <%= link_to(result.content, "/posts/#{result.id}") %>
+        </div>
+      <% end %>
+    <% else %>
+      <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
         <img src="<%= "/user_images/#{post.user.image_name}" %>">
       </div>
       <div class="post_right">
@@ -11,6 +25,7 @@
       </div>
         <%= link_to(post.content, "/posts/#{post.id}") %>
       </div>
+      <% end %>
     <% end %>
     <%= paginate @posts %>
   </div>
