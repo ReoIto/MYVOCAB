@@ -1,13 +1,31 @@
 /* posts/index ================================ */
+.posts-index {
+  background-color: white;
+}
+
+.posts-index-container {
+  background-image: url(book_image.png);
+  height: 700px;
+  background-size: 1150px 720px;
+  background-position: center;
+}
+
+.post-index-box {
+  column-count: 2;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.post-index-box div {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
 
 .posts-index-item {
-  padding: 20px 30px;
-  background-color: white;
-  overflow: hidden;
+  width: 400px;
+  display: inline-block;
+  padding: 20px;
   box-shadow: 0 1px 7px #8aadc5;
-  font-size: 30px;
-  width: 600px;
-  margin: 0 auto;
 }
 
 .post-left img {
@@ -88,6 +106,14 @@
   text-decoration: underline;
   font-size: 14px;
 }
+
+.book-image img {
+    width: 1050px;
+    margin: -20px 0 0 40px;
+}
+
+/* pagenation of kaminari */
+
 
 /* posts/new ================================*/
 .posts-new {
