@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   def index
     @search= Post.ransack(params[:q])
-    @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(2)
-    @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(2)
-    #@posts = Post.page(params[:page]).order(created_at: :desc)
+    @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(12)
+    @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(12)
+    #@posts = Post.all.order(created_at: :desc)
   end
 
   def personal_index
@@ -82,10 +82,5 @@ class PostsController < ApplicationController
         redirect_to("/posts/index")
       end
   end
-
-  # def searched_index
-    #@search_params = posts_search_params
-    #@searched_posts = Post.where(content: @search_params[:keyword])
-  #end
 
 end
