@@ -100,11 +100,13 @@ input, select {
 }
 
 /*--------------------reset_done-------------------- */
+.main {
+  padding-top: 80px;
+}
 
 .container {
   width: 70%;
   margin: 0 auto;
-  border: 1px solid;
 }
 
 header {
@@ -152,14 +154,14 @@ header {
 }
 
 .search_bar {
-    display: flex;
+  display: flex;
 }
 
 .search_bar input {
-    vertical-align: middle;
-    padding: 5px;
-    width: 300px;
-    height: 35px;
+  vertical-align: middle;
+  padding: 5px;
+  width: 300px;
+  height: 35px;
 }
 
 .search_btn input {
