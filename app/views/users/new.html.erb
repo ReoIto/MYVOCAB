@@ -1,6 +1,6 @@
 <div class="main users-new">
   <div class="container">
-    <div class="form-heading">新規ユーザー登録</div>
+    <div class="form-heading">Welcome to MY VOCAB</div>
     <div class="form users-form">
 
       <% @user.errors.full_messages.each do |message| %>
@@ -10,16 +10,19 @@
           <% end %>
 
       <%= form_tag("/users/create", {multipart: true}) do %>
-          <p>ユーザー名</p>
+          <div class="form-title">ユーザー名</div>
           <input name="name" value="<%= @user.name %>">
-          <p>メールアドレス</p>
+
+          <div class="form-title">メールアドレス</div>
           <input name="email" value="<%= @user.email %>">
-          <p>生年月日(公開されません)</p>
+
+          <div class="form-title">生年月日(公開されません)</div>
           <input name="birthday" value="<%= @user.birthday %>">
-          <p>パスワード</p>
+
+          <div class="form-title">パスワード</div>
           <input name="password" type="password">
 
-          <input type="submit" value="新規登録">
+          <input type="submit" value="新規登録"　class="border_slide_btn">
         <% end %>
     </div>
   </div>
