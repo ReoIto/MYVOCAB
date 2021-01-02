@@ -1,6 +1,6 @@
 <div class="main users-new">
   <div class="container">
-    <div class="form-heading">新規ユーザー登録</div>
+    <div class="form-heading">Welcome to MYVOCAB</div>
     <div class="form users-form">
 
       <% @user.errors.full_messages.each do |message| %>
@@ -9,18 +9,21 @@
             </div>
           <% end %>
 
-      <%= form_tag("/users/create", {multipart: true}) do %>
-          <p>ユーザー名</p>
-          <input name="name" value="<%= @user.name %>">
-          <p>メールアドレス</p>
-          <input name="email" value="<%= @user.email %>">
-          <p>生年月日(公開されません)</p>
-          <input name="birthday" value="<%= @user.birthday %>">
-          <p>パスワード</p>
-          <input name="password" type="password">
+          <%= form_tag("/users/create", {multipart: true}) do %>
+              <div class="form-title">Name <span class="required">※required</span></div>
+              <input name="name" value="<%= @user.name %>">
 
-          <input type="submit" value="新規登録">
-        <% end %>
+              <div class="form-title">Email <span class="required">※required</span></div>
+              <input name="email" value="<%= @user.email %>">
+
+              <div class="form-title">Date of Birth (YYYYMMDD)</div>
+              <input name="birthday" value="<%= @user.birthday %>">
+
+              <div class="form-title">Password <span class="required">※required</span></div>
+              <input name="password" type="password">
+
+              <input type="submit" value="Signup"　class="border_slide_btn">
+            <% end %>
     </div>
   </div>
 </div>
