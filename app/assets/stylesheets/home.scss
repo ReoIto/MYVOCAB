@@ -53,9 +53,17 @@
     margin: 90px 130px 0 0;
 }
 
+.form-head {
+    font-size: 30px;
+    color: black;
+    padding-bottom: 10px;
+    opacity: 0.7;
+}
+
 .form-heading {
     font-weight: 400;
     margin: 10px;
+    margin-top: 100px;
     font-size: 45px;
     color: white;
 }
@@ -72,6 +80,12 @@
     text-align: left;
     margin-left: 10%;
     padding-top: 10px;
+    font-size: 17px;
+}
+
+span.required {
+    color: red;
+    padding-left: 20px;
 }
 
 .form input {
@@ -98,7 +112,7 @@
     padding: 10px;
     border: 1px solid #d8dadf;
     color: #57575f;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 2px;
 }
 
@@ -115,7 +129,7 @@
     cursor: pointer;
     font-weight: 300;
     width: 150px;
-    margin-top: 8px;
+    margin-top: 13px;
     box-shadow: 0 2px 6px #c1ced7;
 }
 
