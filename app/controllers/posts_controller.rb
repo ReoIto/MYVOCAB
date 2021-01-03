@@ -5,15 +5,15 @@ class PostsController < ApplicationController
 
   def index
     @search= Post.ransack(params[:q])
-    @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(12)
-    @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(12)
+    @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(14)
+    @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(14)
     #@posts = Post.all.order(created_at: :desc)
   end
 
   def personal_index
     @post = Post.find_by(user_id: params[:id])
     @personal_posts = Post.where(user_id: @post.user_id)
-    @personal_posts = @personal_posts.order(created_at: :desc).kaminari_page(params[:page]).per(12)
+    @personal_posts = @personal_posts.order(created_at: :desc).kaminari_page(params[:page]).per(14)
   end
 
   def show
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def likes
     @user = User.find_by(id: params[:id])
-    @likes = Like.where(user_id: @user.id).order(created_at: :desc).kaminari_page(params[:page]).per(12)
+    @likes = Like.where(user_id: @user.id).order(created_at: :desc).kaminari_page(params[:page]).per(14)
   end
 
   def new
