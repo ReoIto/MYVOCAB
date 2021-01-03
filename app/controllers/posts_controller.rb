@@ -11,7 +11,11 @@ class PostsController < ApplicationController
   end
 
   def personal_index
-
+    #@posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(12)
+    @post = Post.find_by(user_id: params[:id])
+    @personal_posts = Post.where(user_id: @post.user_id)
+    @personal_posts = @personal_posts.order(created_at: :desc).kaminari_page(params[:page]).per(12)
+    #@posts = Post.order(:name).page params[:page]
   end
 
   def show
