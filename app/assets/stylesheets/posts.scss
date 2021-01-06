@@ -13,7 +13,6 @@
 
 .posts-index-box {
     column-count: 2;
-    text-align: center;
     height: 550px;
     width: 70%;
     margin: 90px 0 0 130px;
@@ -26,18 +25,51 @@
 
 .posts-index-item {
     width: 400px;
-    padding: 20px;
+    height: 84px;
     margin-bottom: 7px;
+    padding: 5px 5px 5px 10px;
     border: 2px solid #f6b894;
-    background-color: rgba(255,255,255,0.4);
+    border-radius: 5px;
+    background-color: rgba(186, 201, 198, 0.4);
+}
+
+.posts-index-item a {
+  color: #3c393e;
+}
+
+.post-left {
+    float: left;
+    border-right: 2px solid #f6b894;
+    padding-right: 10px;
 }
 
 .post-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0 2px 3px #c1ced7;
+    object-fit: cover;
+}
+
+.post-item-username {
+    float: left;
+    width: 100%;
+}
+
+.post-item-content {
+    font-size: 25px;
+    text-align: center;
+    margin-left: 60px;
+    margin-top: 15px;
+    height: 60px;
+    padding: 5px;
+    display: block;
+}
+
+.post-item-content a {
+    display: block;
+    padding-bottom: 20px;
+    cursor: pointer;
 }
 
 .post-user-name a {
@@ -48,20 +80,7 @@
   color: #3ecdc6;
 }
 
-.post-left {
-  float: left;
-  width: 10%;
-}
-
-.post-right {
-  float: left;
-  width: 90%;
-  padding-left: 25px;
-  text-align: left;
-}
-
 .posts-show {
-
   padding-top: 120px;
 }
 
