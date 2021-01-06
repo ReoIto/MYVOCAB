@@ -14,9 +14,9 @@
 .posts-index-box {
     column-count: 2;
     text-align: center;
-    height: 570px;
+    height: 550px;
     width: 70%;
-    margin: 80px 0 0 120px;
+    margin: 90px 0 0 130px;
 }
 
 .posts-index-box div {
@@ -25,10 +25,11 @@
 }
 
 .posts-index-item {
-  width: 400px;
-  padding: 20px;
-  box-shadow: 0 1px 7px #8aadc5;
-  margin-bottom: 1px;
+    width: 400px;
+    padding: 20px;
+    margin-bottom: 7px;
+    border: 2px solid #f6b894;
+    background-color: rgba(255,255,255,0.4);
 }
 
 .post-left img {
