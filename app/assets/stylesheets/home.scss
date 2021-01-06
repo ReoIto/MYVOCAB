@@ -127,10 +127,11 @@ span.required {
     background-color: #FF8C00;
     color: white;
     cursor: pointer;
-    font-weight: 300;
+    font-weight: 600;
     width: 150px;
     margin-top: 13px;
     box-shadow: 0 2px 6px #c1ced7;
+    border-radius: 20px;
 }
 
 .form-body:after {
