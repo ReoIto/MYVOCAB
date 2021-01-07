@@ -28,9 +28,9 @@
     height: 84px;
     margin-bottom: 7px;
     padding: 5px 5px 5px 10px;
-    border: 2px solid #f6b894;
+    border: 2px solid black;
     border-radius: 5px;
-    background-color: rgba(186, 201, 198, 0.4);
+    background-color: #bfbbaa;
 }
 
 .posts-index-item a {
@@ -39,7 +39,7 @@
 
 .post-left {
     float: left;
-    border-right: 2px solid #f6b894;
+    border-right: 2px solid #bfbbaa;
     padding-right: 10px;
 }
 
@@ -80,19 +80,43 @@
   color: #3ecdc6;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .posts-show {
-  padding-top: 120px;
+  background-color: black;
+  height: 900px;
 }
 
 .posts-show form {
   display: inline;
 }
 
+.post-show-container {
+  display: flex;
+  padding-top: 30px;
+}
+
 .posts-show-item {
-  padding: 30px;
-  background-color: white;
-  box-shadow: 0 2px 6px #c1ced7;
-  overflow: hidden;
+    padding: 30px;
+    background-color: #bfbbaa;
+    /* box-shadow: 0 2px 6px #c1ced7; */
+    overflow: hidden;
+    width: 50%;
+    height: 650px;
+    margin: 10px;
+    border-radius: 20px;
 }
 
 .posts-show-item img {
@@ -134,6 +158,17 @@
     width: 1050px;
     margin: -20px 0 0 40px;
 }
+
+.post-show-image {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
 
 /* pagenation of kaminari */
 ul.pagination {

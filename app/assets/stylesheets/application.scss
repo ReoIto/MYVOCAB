@@ -100,8 +100,12 @@ input, select {
 }
 
 /*--------------------reset_done-------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Oranienbaum&display=swap');
+
 .main {
   padding-top: 80px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .container {
@@ -116,6 +120,7 @@ header {
   position: fixed;
   z-index: 100;
   padding-left: 30px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .header-name {
