@@ -1,17 +1,22 @@
 <div class="main posts-show">
   <div class="post-show-container">
+    <div class="posts-show-item post-show-image"><p>image</p></div>
+
     <div class="posts-show-item">
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
       </div>
-     <p><%= @post.content %></p>
-     <p><%= @post.meaning %></p>
-     <p><%= @post.example %></p>
-     <p><%= @post.synonyms %></p>
-     <p><%= @post.antonyms %></p>
-     <p><%= @post.note %></p>
-     <div class="post-time">
+
+      <div class=""></div>
+      <p><%= @post.content %></p>
+      <p><%= @post.meaning %></p>
+      <p><%= @post.example %></p>
+      <p><%= @post.synonyms %></p>
+      <p><%= @post.antonyms %></p>
+      <p><%= @post.note %></p>
+
+      <div class="post-time">
        <%= @post.created_at %>
      </div>
 
@@ -26,7 +31,6 @@
         <% end %>
       </div>
      <% end %>
-     <%= @likes_count %>
 
      <% if @post.user_id == @current_user.id %>
      <div class="post-menus">
@@ -34,9 +38,7 @@
        <%= link_to("DELETE", "/posts/#{@post.id}/destroy", {method:"post"}) %>
      </div>
      <% end %>
+
    </div>
-  </div>
-  <div class="posts-show-item post-show-image">
-    
   </div>
 </div>
