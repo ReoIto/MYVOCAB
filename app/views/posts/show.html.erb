@@ -1,41 +1,54 @@
 <div class="main posts-show">
   <div class="post-show-container">
-    <div class="posts-show-item post-show-image"><p>image</p></div>
 
-    <div class="posts-show-item">
-      <div class="post-user-name">
-        <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+    <div class="posts-show-item-box post-show-image-box">
+      <p>image</p>
+    </div>
+
+    <div class="posts-show-item-box">
+
+      <p class="posts-show-item-content"><%= @post.content %></p>
+      <p class="posts-show-item-meaning" ><%= @post.meaning %></p>
+
+      <div class="posts-show-item">
+        <div class="item-header">Example sentence</div>
+        <p><%= @post.example %></p>
       </div>
-
-      <div class=""></div>
-      <p><%= @post.content %></p>
-      <p><%= @post.meaning %></p>
-      <p><%= @post.example %></p>
-      <p><%= @post.synonyms %></p>
-      <p><%= @post.antonyms %></p>
-      <p><%= @post.note %></p>
+      <div class="posts-show-item">
+        <div class="item-header">Synonyms</div>
+        <p><%= @post.synonyms %></p>
+      </div>
+      <div class="posts-show-item">
+        <div class="item-header">Antonyms</div>
+        <p><%= @post.antonyms %></p>
+      </div>
+      <div class="posts-show-item">
+        <div class="item-header">Notes</div>
+        <p><%= @post.note %></p>
+      </div>
 
       <div class="post-time">
        <%= @post.created_at %>
      </div>
 
+     <div class="post-menus">
+       <% if @post.user_id == @current_user.id %>
+        <%= link_to("EDIT", "/posts/#{@post.id}/edit") %>
+        <%= link_to("DELETE", "/posts/#{@post.id}/destroy", {method:"post"}) %>
+       <% end %>
+     </div>
+
      <% if Like.find_by(user_id:@current_user, post_id: @post.id) %>
-      <div class="like-box">
+      <div class="bookmarked-icon">
         <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
           <span class="fas fa-bookmark"</span>
         <% end %>
+      </div>
      <% else %>
+     <div class="bookmarked-icon">
         <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
           <span class="far fa-bookmark"></span>
         <% end %>
-      </div>
-     <% end %>
-
-     <% if @post.user_id == @current_user.id %>
-     <div class="post-menus">
-       <%= link_to("EDIT", "/posts/#{@post.id}/edit") %>
-       <%= link_to("DELETE", "/posts/#{@post.id}/destroy", {method:"post"}) %>
      </div>
      <% end %>
 
