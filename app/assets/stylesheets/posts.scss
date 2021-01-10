@@ -156,7 +156,7 @@
 }
 
 .posts-show-item {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
 }
 
 .item-header {
@@ -171,14 +171,17 @@
     font-size: 20px;
 }
 
-.post-time {
-  color: #8899a6;
-  margin-bottom: 10px;
+.posted-time {
+    color: #8899a6;
+    margin: 30px 0 0 30px;
+    display: inline-block;
 }
 
 .post-menus {
-  display: block;
-  text-align: center;
+    display: inline-block;
+    float: right;
+    text-align: center;
+    padding: 10px;
 }
 
 .post-menus a, .post-menus input {
@@ -187,11 +190,17 @@
   font-size: 14px;
 }
 
+.post-menus a {
+    border: 1px solid;
+    padding: 10px;
+    display: inline-block;
+    width: 100px;
+}
+
 .bookmarked-icon {
-  display: block;
-  float: left;
-  font-size: 40px;
-  padding: 10px;
+    float: left;
+    font-size: 40px;
+    margin-left: 20px;
 }
 
 .book-image img {
