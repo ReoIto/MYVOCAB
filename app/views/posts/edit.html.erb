@@ -1,9 +1,9 @@
-<div class="main posts-new">
-  <div class="container">
-    <h1 class="form-heading">EDIT</h1>
-    <%= form_tag("/posts/#{@post.id}/update") do %>
-    <div class="form">
-      <div class="form-body">
+<div class="main posts-edit">
+  <div class="posts-edit-contaier">
+    <%# <h1 class="form-heading">EDIT</h1> %>
+    <%= form_tag("/posts/#{@post.id}/update", class: "posts-edit-form") do %>
+
+      <div class="posts-edit-form-body">
         <% @post.errors.full_messages.each do |message| %>
             <div class="form-error">
               <%= message %>
