@@ -1,10 +1,10 @@
 /* posts/index ================================ */
 .posts-index {
   height: 900px;
-  background-image: url(index_backimg.jpg);
+  background-image: url(background_img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 20% 100%;
+  background-position: bottom;
 }
 
 .posts-index-container {
@@ -13,9 +13,10 @@
 
 .posts-index-box {
     column-count: 2;
-    height: 550px;
-    width: 70%;
-    margin: 90px 0 0 130px;
+    height: auto;
+    width: 60%;
+    margin: 0 0 0 auto;
+    padding-right: 10px;
 }
 
 .posts-index-box div {
@@ -24,8 +25,6 @@
 }
 
 .posts-index-item {
-    width: 400px;
-    height: 84px;
     margin-bottom: 7px;
     padding: 5px 5px 5px 10px;
     border: 2px solid black;
@@ -204,9 +203,14 @@
 
 
 /* posts/pagenation =========================*/
+.pagination-box {
+    width: 60%;
+    margin: 0 0 0 auto;
+    text-align: center;
+}
+
 ul.pagination {
-    float: right;
-    padding-right: 215px;
+    margin: 0 auto;
 }
 
 /* posts/new ================================*/
