@@ -9,15 +9,33 @@
               <%= message %>
             </div>
           <% end %>
-        <input name="content"  type="text" value="<%= @post.content %>">
-        <input name="meaning"  type="text" value="<%= @post.meaning %>">
-        <input name="example"  type="text" value="<%= @post.example %>">
-        <input name="synonyms" type="text" value="<%= @post.synonyms %>">
-        <input name="antonyms" type="text" value="<%= @post.antonyms %>">
-        <textarea name="note"><%= @post.note %></textarea>
-        <input type="submit" value="SAVE">
+          <div class="posts-edit-form-item">
+            <%= label_tag :Vocab %>
+            <%= text_field_tag :content, @post.content %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :meaning %>
+            <%= text_field_tag :meaning, @post.meaning %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Example_sentence %>
+            <%= text_field_tag :example, @post.example %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Synonyms %>
+            <%= text_field_tag :synonyms, @post.synonyms %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Antonyms %>
+            <%= text_field_tag :antonyms, @post.antonyms %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Note %>
+            <%= text_field_tag :note, @post.note %>
+          </div>
+
+          <%= submit_tag "SAVE", class: "posts-edit-action" %>
       </div>
     </div>
     <% end %>
-  </div>
 </div>

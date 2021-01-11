@@ -244,10 +244,31 @@ ul.pagination {
   padding: 40px;
   background-color: rgba(191,187,170,0.7);
   overflow: hidden;
-  width: 50%;
-  height: 650px;
   margin: 0 25%;
   border-radius: 20px;
   color: black;
+}
 
+.posts-edit-form-body {
+    height: 570px;
+}
+
+.posts-edit-form-body input, textarea {
+  display: block;
+}
+
+.posts-edit-form-item {
+    padding-bottom: 10px;
+}
+
+.posts-edit-form-item input {
+  background-color: transparent;
+  outline: none;
+}
+
+.posts-edit-action {
+  border: 1px solid;
+  padding: 10px;
+  width: 100px;
+  background-color: transparent;
 }
