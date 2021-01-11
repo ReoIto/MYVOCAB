@@ -1,23 +1,41 @@
-<div class="main posts-new">
-  <div class="container">
-    <h1 class="form-heading">EDIT</h1>
-    <%= form_tag("/posts/#{@post.id}/update") do %>
-    <div class="form">
-      <div class="form-body">
+<div class="main posts-edit">
+  <div class="posts-edit-contaier">
+    <%# <h1 class="form-heading">EDIT</h1> %>
+    <%= form_tag("/posts/#{@post.id}/update", class: "posts-edit-form") do %>
+
+      <div class="posts-edit-form-body">
         <% @post.errors.full_messages.each do |message| %>
             <div class="form-error">
               <%= message %>
             </div>
           <% end %>
-        <input name="content"  type="text" value="<%= @post.content %>">
-        <input name="meaning"  type="text" value="<%= @post.meaning %>">
-        <input name="example"  type="text" value="<%= @post.example %>">
-        <input name="synonyms" type="text" value="<%= @post.synonyms %>">
-        <input name="antonyms" type="text" value="<%= @post.antonyms %>">
-        <textarea name="note"><%= @post.note %></textarea>
-        <input type="submit" value="SAVE">
+          <div class="posts-edit-form-item">
+            <%= label_tag :Vocab %>
+            <%= text_field_tag :content, @post.content %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :meaning %>
+            <%= text_field_tag :meaning, @post.meaning %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Example_sentence %>
+            <%= text_field_tag :example, @post.example %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Synonyms %>
+            <%= text_field_tag :synonyms, @post.synonyms %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Antonyms %>
+            <%= text_field_tag :antonyms, @post.antonyms %>
+          </div>
+          <div class="posts-edit-form-item">
+            <%= label_tag :Note %>
+            <%= text_field_tag :note, @post.note %>
+          </div>
+
+          <%= submit_tag "SAVE", class: "posts-edit-action" %>
       </div>
     </div>
     <% end %>
-  </div>
 </div>

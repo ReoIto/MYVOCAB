@@ -80,19 +80,7 @@
   color: #3ecdc6;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* posts/show ================================ */
 
 .posts-show {
   background-color: black;
@@ -112,7 +100,7 @@
 
 .posts-show-item-box {
     padding: 40px;
-    background-color: #bfbbaa;
+    background-color: rgba(191,187,170,0.6);
     overflow: hidden;
     width: 50%;
     height: 650px;
@@ -215,18 +203,13 @@
 }
 
 
-
-
-/* pagenation of kaminari */
+/* posts/pagenation =========================*/
 ul.pagination {
     float: right;
     padding-right: 215px;
 }
 
 /* posts/new ================================*/
-.posts-new {
-  padding-top: 120px;
-}
 
 .posts-new textarea {
   font-size: 20px;
@@ -239,4 +222,53 @@ ul.pagination {
 .posts-new textarea::-webkit-input-placeholder {
   font-size: 24px;
   opacity: 0.5;
+}
+
+
+/* posts/edit ================================*/
+
+.posts-edit {
+  width: 100%;
+  height: 800px;
+  background-image: url(background_img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.posts-edit-contaier {
+  padding-top: 30px;
+}
+
+.posts-edit-form {
+  padding: 40px;
+  background-color: rgba(191,187,170,0.7);
+  overflow: hidden;
+  margin: 0 25%;
+  border-radius: 20px;
+  color: black;
+}
+
+.posts-edit-form-body {
+    height: 570px;
+}
+
+.posts-edit-form-body input, textarea {
+  display: block;
+}
+
+.posts-edit-form-item {
+    padding-bottom: 10px;
+}
+
+.posts-edit-form-item input {
+  background-color: transparent;
+  outline: none;
+}
+
+.posts-edit-action {
+  border: 1px solid;
+  padding: 10px;
+  width: 100px;
+  background-color: transparent;
 }
