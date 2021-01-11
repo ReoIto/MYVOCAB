@@ -1,5 +1,8 @@
 <div class="main posts-index">
-  <div class="container posts-index-container">
+  <div class="posts-index-container">
+    <div class="pagination-box">
+      <%= paginate @posts %>
+    </div>
     <% if @searched_posts %>
     <div class="posts-index-box">
       <% @searched_posts.each do |result| %>
@@ -32,6 +35,5 @@
       </div>
       <% end %>
     <% end %>
-  <%= paginate @posts %>
   </div>
 </div>
