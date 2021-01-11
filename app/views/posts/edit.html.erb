@@ -18,7 +18,7 @@
             <%= text_field_tag :meaning, @post.meaning %>
           </div>
           <div class="posts-edit-form-item">
-            <%= label_tag :Example_sentence %>
+            <%= label_tag :Example %>
             <%= text_field_tag :example, @post.example %>
           </div>
           <div class="posts-edit-form-item">
@@ -31,7 +31,7 @@
           </div>
           <div class="posts-edit-form-item">
             <%= label_tag :Note %>
-            <%= text_field_tag :note, @post.note %>
+            <%= text_area_tag :note, @post.note %>
           </div>
 
           <%= submit_tag "SAVE", class: "posts-edit-action" %>
