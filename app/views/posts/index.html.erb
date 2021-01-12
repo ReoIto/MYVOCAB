@@ -19,6 +19,9 @@
         </div>
       <% end %>
       </div>
+      <div class="pagination-box">
+        <%= paginate @posts %>
+      </div>
 
     <% else %>
       <% @posts.each do |post| %>
