@@ -3,6 +3,45 @@
     <div class="pagination-box">
       <%= paginate @posts %>
     </div>
+
+    <div class="new-post-box">
+      <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
+
+      <div class="form-item">
+        <%= f.label :Vocab %>
+        <%= f.text_field :content %>
+      </div>
+      <div class="form-item">
+        <%= f.label :Meaning %>
+        <%= f.text_field :meaning %>
+      </div>
+      <div class="form-item">
+        <%= f.label :Example %>
+        <%= f.text_field :example %>
+      </div>
+      <div class="form-item">
+        <%= f.label :Synonyms %>
+        <%= f.text_field :synonyms %>
+      </div>
+      <div class="form-item">
+        <%= f.label :Antonyms %>
+        <%= f.text_field :antonyms %>
+      </div>
+      <div class="form-item">
+        <%= f.label :Note %>
+        <%= f.text_area :note %>
+      </div>
+
+      <div><%= f.submit %></div>
+      <% end %>
+    </div>
+
+
+
+
+
+
+
     <% if @searched_posts %>
     <div class="posts-index-box">
       <% @searched_posts.each do |result| %>
