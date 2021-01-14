@@ -3,10 +3,12 @@ class PostsController < ApplicationController
   before_action :ensure_current_user, {only: [:edit, :update, :destroy]}
 
 
+
   def index
     @search= Post.ransack(params[:q])
     @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(14)
     @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(14)
+    @post = Post.new
   end
 
   def personal_index
@@ -27,9 +29,7 @@ class PostsController < ApplicationController
     @likes = Like.where(user_id: @user.id).order(created_at: :desc).kaminari_page(params[:page]).per(14)
   end
 
-  def new
-    @post = Post.new
-  end
+
 
   def create
     @post = Post.new(
@@ -43,9 +43,9 @@ class PostsController < ApplicationController
                     )
     if @post.save
       flash[:notice] = "New list has been created."
-      redirect_to("/posts/index")
+      redirect_to posts_index_path
     else
-      render("posts/new")
+      render :new
     end
   end
 
