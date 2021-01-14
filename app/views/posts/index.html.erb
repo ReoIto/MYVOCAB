@@ -4,78 +4,70 @@
       <%= paginate @posts %>
     </div>
 
-    <div class="new-post-box">
-      <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
+    <div class="posts-new-index-container">
+      <div class="new-post-form">
+        <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
 
-      <div class="form-item">
-        <%= f.label :Vocab %>
-        <%= f.text_field :content %>
+        <div class="form-item">
+          <%= f.text_field :content, placeholder: "Vocab" %>
+        </div>
+        <div class="form-item">
+          <%= f.text_field :meaning, placeholder: "Meaning" %>
+        </div>
+        <div class="form-item">
+          <%= f.text_field :example, placeholder: "Example sentence" %>
+        </div>
+        <div class="form-item">
+          <%= f.text_field :synonyms, placeholder: "Synonyms" %>
+        </div>
+        <div class="form-item">
+          <%= f.text_field :antonyms, placeholder: "Antonyms" %>
+        </div>
+        <div class="form-item">
+          <%= f.text_area :note, placeholder: "Note" %>
+        </div>
+
+        <div><%= f.submit %></div>
+        <% end %>
       </div>
-      <div class="form-item">
-        <%= f.label :Meaning %>
-        <%= f.text_field :meaning %>
-      </div>
-      <div class="form-item">
-        <%= f.label :Example %>
-        <%= f.text_field :example %>
-      </div>
-      <div class="form-item">
-        <%= f.label :Synonyms %>
-        <%= f.text_field :synonyms %>
-      </div>
-      <div class="form-item">
-        <%= f.label :Antonyms %>
-        <%= f.text_field :antonyms %>
-      </div>
-      <div class="form-item">
-        <%= f.label :Note %>
-        <%= f.text_area :note %>
-      </div>
-
-      <div><%= f.submit %></div>
-      <% end %>
-    </div>
 
 
 
-
-
-
-
-    <% if @searched_posts %>
-    <div class="posts-index-box">
-      <% @searched_posts.each do |result| %>
-        <div class="posts-index-item">
-          <div class="post-item-username">
-            <%= link_to(result.user.name, "/users/#{result.user.id}" ) %>
+      <% if @searched_posts %>
+      <div class="posts-index-box">
+        <% @searched_posts.each do |result| %>
+          <div class="posts-index-item">
+            <div class="post-item-username">
+              <%= link_to(result.user.name, "/users/#{result.user.id}" ) %>
+            </div>
+            <div class="post-left">
+              <img src="<%= "/user_images/#{result.user.image_name}" %>">
+            </div>
+            <div class="post-item-content">
+              <%= link_to(result.content, "/posts/#{result.id}") %>
+            </div>
           </div>
+        <% end %>
+        </div>
+
+      <% else %>
+        <% @posts.each do |post| %>
+        <div class="posts-index-item">
           <div class="post-left">
-            <img src="<%= "/user_images/#{result.user.image_name}" %>">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
+          </div>
+          <div class="post-item-username">
+            <%= link_to(post.user.name, "/users/#{post.user.id}" ) %>
           </div>
           <div class="post-item-content">
-            <%= link_to(result.content, "/posts/#{result.id}") %>
+            <%= link_to(post.content, "/posts/#{post.id}") %>
           </div>
         </div>
+        <% end %>
       <% end %>
-      </div>
-      <div class="pagination-box">
-        <%= paginate @posts %>
-      </div>
-
-    <% else %>
-      <% @posts.each do |post| %>
-      <div class="posts-index-item">
-        <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-        </div>
-        <div class="post-item-username">
-          <%= link_to(post.user.name, "/users/#{post.user.id}" ) %>
-        </div>
-        <div class="post-item-content">
-          <%= link_to(post.content, "/posts/#{post.id}") %>
-        </div>
-      </div>
-      <% end %>
-    <% end %>
+    </div>
+    <div class="pagination-box">
+      <%= paginate @posts %>
+    </div>
   </div>
 </div>
