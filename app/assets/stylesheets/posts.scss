@@ -9,14 +9,25 @@
 
 .posts-index-container {
   background-size: 1150px 720px;
+
+  .posts-new-index-container {
+    display: flex;
+  }
+}
+
+.new-post-form {
+  width: 40%;
+  border: 1px solid white;
+
+  .form-item {
+
+  }
 }
 
 .posts-index-box {
     column-count: 2;
     height: auto;
     width: 60%;
-    margin: 0 0 0 auto;
-    padding-right: 10px;
 }
 
 .posts-index-box div {
