@@ -5,6 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+  background-attachment: fixed;
 }
 
 .posts-index-container {
@@ -19,9 +20,46 @@
   width: 40%;
   border: 1px solid white;
 
-  .form-item {
-
+  .new-post-form-heading {
+    font-size: 30px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 10px;
   }
+
+  .form-item {
+    font-size: 27px;
+    padding: 0px 7px 7px 7px;
+  }
+
+  .form-item input, textarea {
+    background-color: transparent;
+    width: 100%;
+    border: 2px solid;
+  }
+
+  .form-item-content {
+    font-size: 50px;
+    text-align: center;
+
+    input#content {
+      text-align: center;
+    }
+  }
+
+  .form-item-meaning {
+    font-size: 30px;
+    text-align: center;
+  }
+    input#meaning {
+      text-align: center;
+    }
+
+  .submit {
+    text-align: center;
+  }
+
 }
 
 .posts-index-box {
@@ -288,14 +326,16 @@ ul.pagination {
     text-align: center;
 }
 
-.posts-edit-form-item input, textarea {
-    width: 500px;
-    background-color: rgba(191,187,170,0.5);
-    outline: none;
-    border: 1px solid black;
-    border-radius: 7px;
-    padding: 5px;
-    font-size: 17px;
+.posts-edit-form-item {
+  input, textarea {
+      width: 500px;
+      background-color: rgba(191,187,170,0.5);
+      outline: none;
+      border: 1px solid black;
+      border-radius: 7px;
+      padding: 5px;
+      font-size: 17px;
+  }
 }
 
 .posts-edit-form-item textarea {
