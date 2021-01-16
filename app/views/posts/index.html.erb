@@ -6,13 +6,12 @@
 
     <div class="posts-new-index-container">
       <div class="new-post-form">
-        <div class="new-post-form-heading">ADD NEW  VOCAB</div>
         <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
 
         <div class="form-item form-item-content">
           <%= f.text_field :content, placeholder: "Vocab" %>
         </div>
-        <div class="form-item form-item-meaning">
+        <div class="form-item">
           <%= f.text_field :meaning, placeholder: "Meaning" %>
         </div>
         <div class="form-item">
