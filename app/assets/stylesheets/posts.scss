@@ -102,11 +102,17 @@
     border-color: darkcyan;
     border-style: ridge;
     border-radius: 5px;
-    background-color: darkcyan;
+    background-color: rgba(0,139,139 ,0.8);
 }
 
 .posts-index-item a {
-  color: #c1ced7;;
+  color: white;
+}
+
+.posts-index-item a:hover {
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  text-decoration: none;
 }
 
 .post-left {
