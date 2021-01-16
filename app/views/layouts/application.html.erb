@@ -23,6 +23,12 @@
               <%= link_to("MY VOCAB", "/") %>
             <% end %>
           </div>
+          <!-- Flash message -->
+          <% if flash[:notice] %>
+            <div class="flash">
+                <%= flash[:notice] %>
+            </div>
+          <% end %>
           <div class="header-menu">
             <ul>
             <% if @current_user %>
@@ -87,12 +93,7 @@
           </div>
         </div>
     </header>
-    <!-- Flash message -->
-    <% if flash[:notice] %>
-      <div class="flash">
-          <%= flash[:notice] %>
-      </div>
-    <% end %>
+
     <%= yield %>
 
   </body>
