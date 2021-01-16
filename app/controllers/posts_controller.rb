@@ -29,7 +29,9 @@ class PostsController < ApplicationController
     @likes = Like.where(user_id: @user.id).order(created_at: :desc).kaminari_page(params[:page]).per(14)
   end
 
-
+  def new
+    @post = Post.new
+  end
 
   def create
     @post = Post.new(
@@ -43,9 +45,9 @@ class PostsController < ApplicationController
                     )
     if @post.save
       flash[:notice] = "New list has been created."
-      redirect_to posts_index_path
+      redirect_to("/posts/index")
     else
-      render :new
+      render ("posts/new")
     end
   end
 
