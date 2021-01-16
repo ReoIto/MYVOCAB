@@ -103,6 +103,10 @@ input, select {
 @import url('https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Oranienbaum&display=swap');
 
+a {
+  text-decoration: none !important;
+}
+
 .main {
   padding-top: 80px;
   font-family: 'Cormorant Garamond', serif;
