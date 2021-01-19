@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def likes
     @user = User.find_by(id: params[:id])
-    @likes = Like.where(user_id: @user.id).order(created_at: :desc).kaminari_page(params[:page]).per(14)
+    @likes = Like.where(user_id: @user.id).order(created_at: :desc).kaminari_page(params[:page]).per(8)
   end
 
   def new
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
       flash[:notice] = "New list has been created."
       redirect_to("/posts/index")
     else
-      render ("posts/new")
+      render template: "posts/new"
     end
   end
 
