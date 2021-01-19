@@ -1,5 +1,8 @@
 <div class="main posts-index">
-  <div class="container posts-index-container">
+  <div class="posts-likes-container">
+    <div class="pagination-box">
+      <%= paginate @likes %>
+    </div>
     <div class="posts-index-box">
     <% @likes.each do |like| %>
     <% post = Post.find_by(id: like.post_id) %>
@@ -7,15 +10,15 @@
         <div class="post-item-username">
           <%= link_to(post.user.name, "/users/#{post.user.id}") %>
         </div>
-        <div class="post-left">
+        <div class="likes-post-left">
           <img src="<%= "/user_images/#{post.user.image_name}" %>">
         </div>
-        <div class="post-item-content">
+        <div class="likes-post-item-content">
           <%= link_to(post.content, "/posts/#{post.id}") %>
+          <p><%= post.example %></p>
         </div>
       </div>
     <% end %>
     </div>
-  <%= paginate @likes %>
   </div>
 </div>
