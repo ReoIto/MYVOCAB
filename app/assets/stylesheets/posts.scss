@@ -289,11 +289,19 @@
   text-align: center;
   height: 75px;
   display: block;
+  margin-left: 20px;
 
   a {
     display: block;
     line-height: 75px;
   }
+}
+
+.post-item-bookmarked-icon {
+  font-size: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 5px;
 }
 
 
