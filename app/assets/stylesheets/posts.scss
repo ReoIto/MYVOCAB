@@ -103,6 +103,8 @@
     border-style: ridge;
     border-radius: 5px;
     background-color: rgba(0,139,139 ,0.8);
+    position: relative;
+
 }
 
 .posts-index-item a {
@@ -116,9 +118,9 @@
 }
 
 .post-left {
-    float: left;
-    border-right: 2px solid #bfbbaa;
-    padding-right: 10px;
+  float: left;
+  position: absolute;
+  top: 25px;
 }
 
 .post-left img {
@@ -130,8 +132,8 @@
 }
 
 .post-item-username {
-    float: left;
-    width: 100%;
+  float: left;
+  margin-left: 2px;
 }
 
 .post-item-content {
@@ -148,6 +150,7 @@
     display: block;
     padding-bottom: 20px;
     cursor: pointer;
+    border-left: 1px dashed black;
 }
 
 .post-user-name a {
@@ -280,26 +283,19 @@
     background-repeat: no-repeat;
 }
 
+/* posts/personal_index ================================*/
+.personal-post-item-content {
+  font-size: 33px;
+  text-align: center;
+  height: 75px;
+  display: block;
 
-/* posts/pagenation =========================*/
-.pagination-box {
-    width: 65%;
-    margin: 0 0 0 auto;
-    text-align: center;
+  a {
+    display: block;
+    line-height: 75px;
+  }
 }
 
-ul.pagination {
-    margin: 0 auto;
-}
-
-.pagination>li>a, .pagination>li>span {
-  color: white !important;
-  background-color: darkcyan !important;
-}
-
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-  background-color: rgba(0, 255, 255, 0.6) !important;
-}
 
 /* posts/new ================================*/
 
@@ -390,11 +386,17 @@ ul.pagination {
 /* posts/likes ================================*/
 .posts-likes-container {
 
+  .pagination-box {
+    width: 100%;
+    margin: 0;
+  }
+
   .posts-index-box {
     column-count: 2;
     height: auto;
     width: 80%;
     margin:0 auto;
+    padding-bottom: 30px;
 
     .posts-index-item {
       height: 160px;
@@ -410,7 +412,7 @@ ul.pagination {
         .likes-post-left {
           float: left;
           position: absolute;
-          top: 40px;
+          top: 55px;
         }
 
         .likes-post-left img {
@@ -437,7 +439,7 @@ ul.pagination {
         .likes-post-item-content a {
           display: block;
           height: 125px;
-          font-size: 30px;
+          font-size: 35px;
         }
 
         .likes-post-item-content p {
@@ -452,4 +454,24 @@ ul.pagination {
         }
     }
   }
+}
+
+/* posts/pagenation =========================*/
+.pagination-box {
+    width: 65%;
+    margin: 0 0 0 auto;
+    text-align: center;
+}
+
+ul.pagination {
+    margin: 0 auto;
+}
+
+.pagination>li>a, .pagination>li>span {
+  color: white !important;
+  background-color: darkcyan !important;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  background-color: rgba(0, 255, 255, 0.6) !important;
 }
