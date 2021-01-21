@@ -37,19 +37,25 @@
           <div class="personal-post-item-content">
             <%= link_to(post.content, "/posts/#{post.id}") %>
           </div>
-          <% if Like.find_by(user_id:@current_user, post_id: @post.id) %>
+
+
+
+          <% if Like.find_by(user_id:@current_user, post_id: post.id) %>
            <div class="post-item-bookmarked-icon">
-             <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+             <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
                <span class="fas fa-bookmark"</span>
              <% end %>
            </div>
           <% else %>
           <div class="post-item-bookmarked-icon">
-             <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+             <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
                <span class="far fa-bookmark"></span>
              <% end %>
           </div>
           <% end %>
+
+
+
         </div>
         <% end %>
       </div>
