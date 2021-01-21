@@ -13,6 +13,21 @@
         <div class="likes-post-left">
           <img src="<%= "/user_images/#{post.user.image_name}" %>">
         </div>
+
+        <% if Like.find_by(user_id:@current_user, post_id: post.id) %>
+         <div class="post-item-bookmarked-icon">
+           <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
+             <span class="fas fa-bookmark"</span>
+           <% end %>
+         </div>
+        <% else %>
+        <div class="post-item-bookmarked-icon">
+           <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
+             <span class="far fa-bookmark"></span>
+           <% end %>
+        </div>
+        <% end %>
+
         <div class="likes-post-item-content">
           <%= link_to(post.content, "/posts/#{post.id}") %>
           <p><%= post.example %></p>
