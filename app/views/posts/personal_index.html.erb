@@ -34,15 +34,28 @@
       <div class="posts-index-box">
         <% @personal_posts.each do |post| %>
         <div class="posts-index-item">
-          <div class="post-item-username">
-            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
-          </div>
-          <div class="post-left">
-            <img src="<%= "/user_images/#{post.user.image_name}" %>">
-          </div>
-          <div class="post-item-content">
+          <div class="personal-post-item-content">
             <%= link_to(post.content, "/posts/#{post.id}") %>
           </div>
+
+
+
+          <% if Like.find_by(user_id:@current_user, post_id: post.id) %>
+           <div class="post-item-bookmarked-icon">
+             <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
+               <span class="fas fa-bookmark"</span>
+             <% end %>
+           </div>
+          <% else %>
+          <div class="post-item-bookmarked-icon">
+             <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
+               <span class="far fa-bookmark"></span>
+             <% end %>
+          </div>
+          <% end %>
+
+
+
         </div>
         <% end %>
       </div>
