@@ -1,27 +1,30 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">NEW VOCAB</h1>
-    <%= form_tag("/posts/create") do %>
-    <div class="form">
-      <div class="form-body">
-      <% @post.errors.full_messages.each do |message| %>
-      <div class="form-error">
-        <%= message %>
+    <div class="new-post-form">
+      <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
+
+      <div class="form-item form-item-content">
+        <%= f.text_field :content, placeholder: "Vocab" %>
       </div>
+      <div class="form-item">
+        <%= f.text_field :meaning, placeholder: "Meaning" %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :example, placeholder: "Example sentence" %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :synonyms, placeholder: "Synonyms" %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :antonyms, placeholder: "Antonyms" %>
+      </div>
+      <div class="form-item">
+        <%= f.text_area :note, size: "30x6",placeholder: "Note" %>
+      </div>
+
+      <div class="submit"><%= f.submit("Add Vocab") %></div>
       <% end %>
-        <input type="text" name="content">
-        <input type="text" name="meaning">
-        <div class="input_title">例文</div>
-        <input type="text" name="example">
-        <div class="input_title">類義語</div>
-        <input type="text" name="synonyms">
-        <div class="input_title">対義語</div>
-        <input type="text" name="antonyms">
-        <div class="input_title">メモ</div>
-        <textarea name="note"><%= @post.note %></textarea>
-        <input type="submit" value="ENTER">
-      </div>
     </div>
-    <% end %>
   </div>
 </div>

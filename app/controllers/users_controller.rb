@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       redirect_to("/users/#{@user.id}")
       flash[:notice] = "Your account has been created."
     else
-      render("users/new")
+      render :new
     end
   end
 

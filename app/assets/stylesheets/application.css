@@ -110,6 +110,7 @@ a {
 .main {
   padding-top: 80px;
   font-family: 'Cormorant Garamond', serif;
+  height: 900px;
 }
 
 .container {
