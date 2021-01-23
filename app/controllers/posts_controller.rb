@@ -45,9 +45,9 @@ class PostsController < ApplicationController
                     )
     if @post.save
       flash[:notice] = "New list has been created."
-      redirect_to("/posts/index")
+      redirect_to ("/posts/#{@post.user_id}/index")
     else
-      render template: "posts/new"
+      render :new
     end
   end
 
