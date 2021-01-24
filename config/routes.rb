@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  root to: "home#top"
+
   post 'likes/:post_id/create'  => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'
 
@@ -24,7 +28,7 @@ Rails.application.routes.draw do
   post 'posts/:id/destroy' => 'posts#destroy'
 
 
-  get  '/'                 => 'home#top'
+  get  'home#top'                 => 'home#top'
   get  'about'             => 'home#about'
 
 end
