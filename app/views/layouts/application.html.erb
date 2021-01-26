@@ -15,7 +15,7 @@
     <header>
         <div class="header-contents">
           <div class="header-name">
-            <% if @current_user %>
+            <% if user_signed_in? %>
             <!-- being logged in -->
               <%= link_to("MYVOCAB", "/posts/index") %>
             <% else %>
@@ -31,7 +31,7 @@
           <% end %>
           <div class="header-menu">
             <ul>
-            <% if @current_user %>
+            <% if user_signed_in? %>
               <!-- being logged in -->
 
               <!-- search bar -->
@@ -53,12 +53,12 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to("/posts/#{@current_user.id}/index") do %>
+                <%= link_to("/posts/#{current_user.id}/index") do %>
                   <i class="fas fa-user"></i>
                 <% end %>
               </li>
               <li>
-                <%= link_to("/posts/#{@current_user.id}/likes") do %>
+                <%= link_to("/posts/#{current_user.id}/likes") do %>
                   <i class="fas fa-bookmark"></i>
                 <% end %>
               </li>
@@ -68,7 +68,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to("/users/#{@current_user.id}") do %>
+                <%= link_to("/users/#{current_user.id}") do %>
                   <i class="fas fa-cog"></i>
                 <% end %>
               </li>
@@ -83,10 +83,16 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to("SIGNUP", "users/new")%>
+                <%= link_to "devise_signup", new_user_registration_path %>
               </li>
               <li>
-                <%= link_to("LOGIN", "/login")%>
+                <%= link_to "devise_signin", new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to("SIGNUP", "/users/new") %>
+              </li>
+              <li>
+                <%= link_to("LOGIN", "/login") %>
               </li>
             <% end %>
             </ul>
