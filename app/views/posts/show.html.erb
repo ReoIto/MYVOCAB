@@ -32,13 +32,13 @@
      </div>
 
      <div class="post-menus">
-       <% if @post.user_id == @current_user.id %>
+       <% if @post.user_id == current_user.id %>
         <%= link_to("EDIT", "/posts/#{@post.id}/edit") %>
         <%= link_to("DELETE", "/posts/#{@post.id}/destroy", {method:"post"}) %>
        <% end %>
      </div>
 
-     <% if Like.find_by(user_id:@current_user, post_id: @post.id) %>
+     <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
       <div class="bookmarked-icon">
         <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
           <span class="fas fa-bookmark"</span>
