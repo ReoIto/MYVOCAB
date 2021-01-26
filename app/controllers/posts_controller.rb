@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user
-  before_action :ensure_current_user, {only: [:edit, :update, :destroy]}
+  # before_action :authenticate_user
+  # before_action :ensure_current_user, {only: [:edit, :update, :destroy]}
 
 
 
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
                     synonyms: params[:synonyms],
                     antonyms: params[:antonyms],
                     note: params[:note],
-                    user_id: @current_user.id
+                    user_id: current_user.id
                     )
     if @post.save
       flash[:notice] = "New list has been created."
