@@ -20,7 +20,7 @@
               <%= link_to("MYVOCAB", "/posts/index") %>
             <% else %>
             <!-- being NOT logged in -->
-              <%= link_to("MY VOCAB", "/") %>
+              <%= link_to("MY VOCAB", "/top") %>
             <% end %>
           </div>
           <!-- Flash message -->
@@ -73,7 +73,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to("LOGOUT", "/logout", {method: :post}) %>
+                <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
               </li>
             <% else %>
               <!-- being NOT logged in -->
