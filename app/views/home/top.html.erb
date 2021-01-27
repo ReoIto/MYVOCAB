@@ -14,20 +14,38 @@
           </div>
         <% end %>
 
-    <%= form_tag("/users/create", {multipart: true}) do %>
-        <div class="form-title">Name <span class="required">※required</span></div>
-        <input name="name" value="<%= @user.name %>">
+        <%= form_with(url: user_registration_path, model: @user, local: true) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="form-title">Email <span class="required">※required</span></div>
-        <input name="email" value="<%= @user.email %>">
 
-        <div class="form-title">Date of Birth (YYYYMMDD)</div>
-        <input name="birthday" value="<%= @user.birthday %>">
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name %>
+          </div>
 
-        <div class="form-title">Password <span class="required">※required</span></div>
-        <input name="password" type="password">
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
 
-        <input type="submit" value="Signup"　class="border_slide_btn">
-      <% end %>
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div>
+        <% end %>
+
+
   </div>
 </div>
