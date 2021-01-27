@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  devise_scope :user do
+    get '/users/logout' => 'devise/sessions#destroy'
+  end
+
 
   root to: "posts#index"
 
@@ -30,7 +34,7 @@ Rails.application.routes.draw do
   post 'posts/:id/destroy' => 'posts#destroy'
 
 
-  get  'home#top'                 => 'home#top'
+  get  'top'                 => 'home#top', as: "top"
   get  'about'             => 'home#about'
 
 end
