@@ -14,7 +14,7 @@
           <img src="<%= "/user_images/#{post.user.image_name}" %>">
         </div>
 
-        <% if Like.find_by(user_id:@current_user, post_id: post.id) %>
+        <% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
          <div class="post-item-bookmarked-icon">
            <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
              <span class="fas fa-bookmark"</span>
