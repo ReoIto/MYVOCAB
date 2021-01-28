@@ -52,68 +52,65 @@
 
 /* users/show ================================ */
 .user-show {
-  text-align: center;
-}
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
 
-.user {
-  margin-bottom: 20px;
-}
+  .container {
+    padding-top: 100px;
 
-.user img {
-  width: 80px;
-  height: 80px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
-  object-fit: cover;
-}
+    .user {
+      max-width: 500px;
+      height: 345px;
+      margin: 0 auto;
+      padding: 15px;
+      border: 3px solid;
+      border-radius: 20px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
 
-.user h2 {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-}
 
-.user p {
-  font-size: 13px;
-  margin-bottom: 15px;
-}
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
+        border: 1px solid white;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
 
-.user a {
-  color: #8899a6;
-  text-decoration: underline;
-  font-weight: 200;
-}
+      h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
 
-.user span {
-  color: #afb6bf;
-  font-weight: 200;
-  padding: 0 6px 0 8px;
-}
+      p {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
 
-.user-tabs {
-  margin-top: 40px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-}
+      .btn {
+        display: block;
+        text-align: center;
 
-.user-tabs li {
-  float: left;
-}
+        a {
+          color: rgba(255, 255, 255, 0.6);
+          padding: 10px;
+          font-size: 25px;
+          background-color: transparent;
+          border: 3px solid;
+          border-radius: 5px;
 
-.user-tabs li.active {
-  border-bottom: 2px solid #3ecdc6;
-}
-
-.user-tabs li.active a {
-  color: #57575f;
-}
-
-.user-tabs a {
-  display: inline-block;
-  padding: 16px 30px;
-  color: #afb6bf;
+          &:hover {
+            background-color: rgba(0,139,139 ,0.5 );
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* users/new, users/edit ================================ */
@@ -129,4 +126,28 @@
   background-image: url("top.jpg");
   background-color:rgba(255,255,255,0.1);
   background-blend-mode:lighten;
+}
+
+.users-edit {
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+
+  .container {
+    .form-heading {
+
+    }
+    .users-form {
+      .form-error {
+
+      }
+      .form-body {
+        input {
+
+        }
+      }
+    }
+  }
 }
