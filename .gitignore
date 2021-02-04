@@ -41,3 +41,5 @@ yarn-debug.log*
 .yarn-integrity
 gibo 2.2.4 by Simon Whitaker <sw@netcetera.org>
 https://github.com/simonwhitaker/gibo
+YOUR-FILE-WITH-SENSITIVE-DATA
+environment.rb

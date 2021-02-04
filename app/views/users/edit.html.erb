@@ -1,25 +1,31 @@
 <div class="main users-edit">
   <div class="container">
-    <div class="form-heading">ユーザー情報の編集</div>
     <div class="form users-form">
       <% @user.errors.full_messages.each do |message| %>
           <div class="form-error">
             <%= message %>
           </div>
       <% end %>
-
-    <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-      <div class="form-body">
-        <p>ユーザー名</p>
-        <input name="name" value=" <%= @user.name %> ">
-        <p>メールアドレス</p>
-        <input name="email" value=" <%= @user.email %> ">
-        <p>プロフィール画像</p>
-        <input name="image" value=" <%= @user.image_name %> " type="file">
-        
-        <input type="submit" value="保存">
+      <%= form_with url: users_update_path do |f| %>
+      <div class="form-item">
+        <%= f.label :image do %>
+          <p>Profile icon</p>
+          <i class="far fa-images"></i> <br>
+        <% end %>
+        <%= f.file_field :image, style: "display: none;" %>
       </div>
-    <% end %>
+      <div class="form-item">
+        <%= f.label :Name %>
+        <%= f.text_field :name, value: @user.name %>
+      </div>
+      <div class="form-item">
+        <%= f.label :Email %>
+        <%= f.text_field :email, value: @user.email %>
+      </div>
     </div>
+    <div class="btn">
+      <%= f.submit  %>
+    </div>
+    <% end %>
   </div>
 </div>
