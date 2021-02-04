@@ -2,8 +2,6 @@ class PostsController < ApplicationController
   # before_action :authenticate_user
   # before_action :ensure_current_user, {only: [:edit, :update, :destroy]}
 
-
-
   def index
     @search= Post.ransack(params[:q])
     @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(14)

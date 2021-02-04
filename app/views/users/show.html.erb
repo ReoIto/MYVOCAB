@@ -2,11 +2,11 @@
   <div class="container">
     <div class="user">
       <%= image_tag "/user_images/#{@user.image_name}" %>
-      <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
+      <p class="user-name"><%= @user.name %></p>
+      <p class="user-email"><%= @user.email %></p>
     </div>
     <% if @user.id == current_user.id %>
-    <%= link_to("EDIT", "/users/#{@user.id}/edit") %>
+      <div class="btn"><%= link_to("EDIT", "/users/#{@user.id}/edit") %></div>
     <% end %>
   </div>
 </div>
