@@ -52,72 +52,73 @@
 
 /* users/show ================================ */
 .user-show {
-  text-align: center;
-}
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
 
-.user {
-  margin-bottom: 20px;
-}
+  .container {
+    padding-top: 100px;
 
-.user img {
-  width: 80px;
-  height: 80px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
-  object-fit: cover;
-}
+    .user {
+      max-width: 500px;
+      height: 345px;
+      margin: 0 auto;
+      padding: 50px;
+      border: 3px solid;
+      border-radius: 20px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      background-color: black;
 
-.user h2 {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-}
 
-.user p {
-  font-size: 13px;
-  margin-bottom: 15px;
-}
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
+        border: 1px solid white;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
 
-.user a {
-  color: #8899a6;
-  text-decoration: underline;
-  font-weight: 200;
-}
+      .user-name {
+        font-size: 40px;
 
-.user span {
-  color: #afb6bf;
-  font-weight: 200;
-  padding: 0 6px 0 8px;
-}
+      }
 
-.user-tabs {
-  margin-top: 40px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-}
+      .user-email {
+        font-size: 30px;
 
-.user-tabs li {
-  float: left;
-}
+      }
+     }
 
-.user-tabs li.active {
-  border-bottom: 2px solid #3ecdc6;
-}
+     .btn {
+       display: block;
+       text-align: center;
+       margin-top: 30px;
+       background-color: black;
 
-.user-tabs li.active a {
-  color: #57575f;
-}
 
-.user-tabs a {
-  display: inline-block;
-  padding: 16px 30px;
-  color: #afb6bf;
+       a {
+         color: rgba(255, 255, 255, 0.6);
+         padding: 10px;
+         font-size: 25px;
+         background-color: transparent;
+         border: 3px solid;
+         border-radius: 5px;
+
+         &:hover {
+           background-color: rgba(0,139,139 ,0.5 );
+           color: white;
+         }
+       }
+     }
+  }
 }
 
 /* users/new, users/edit ================================ */
-.users-new,  {
+.users-new {
   text-align: center;
   position: fixed;
   width: 100%;
@@ -129,4 +130,73 @@
   background-image: url("top.jpg");
   background-color:rgba(255,255,255,0.1);
   background-blend-mode:lighten;
+}
+
+.users-edit {
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+
+  .container {
+    .users-form {
+      max-width: 500px;
+      height: 345px;
+      margin: 0 auto;
+      padding: 30px;
+      margin-top: 100px;
+      border: 3px solid;
+      box-shadow: none;
+      border-radius: 20px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      background-color: black;
+
+      .form-item {
+        padding-top: 10px;
+        letter-spacing: 1px;
+        font-size: 15px;
+
+
+        label[for="image"] {
+          display: block;
+          text-align: center;
+
+          .fa-images {
+              border-radius: 25px;
+              padding: 10px 20px;
+              font-size: 25px;
+              color: black;
+              background-color: rgba(255, 255, 255, 0.6);;
+
+              &:hover {
+                cursor: pointer;
+                background-color: rgba(0,139,139 ,0.5 );
+                color: white;
+              }
+          }
+        }
+      }
+    }
+    .btn {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+
+      input {
+            color: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            font-size: 25px;
+            background-color: black;
+            border: 3px solid;
+            border-radius: 5px;
+
+            &:hover {
+              background-color: rgba(0, 139, 139, 0.5);
+              color: white;
+            }
+      }
+    }
+  }
 }
