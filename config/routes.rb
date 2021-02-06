@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   post 'posts/:id/destroy' => 'posts#destroy'
 
 
-  get  'top'                 => 'home#top', as: "top"
+  get  'top'               => 'home#top', as: "top"
   get  'about'             => 'home#about'
 
 end
