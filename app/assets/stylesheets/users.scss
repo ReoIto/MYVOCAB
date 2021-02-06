@@ -117,7 +117,12 @@
   }
 }
 
-/* users/new, users/edit ================================ */
+/* users/new,
+   users/edit,
+   users/password/new,
+   users/confirmations/new,
+   =============================== */
+
 .users-new {
   text-align: center;
   position: fixed;
@@ -200,3 +205,4 @@
     }
   }
 }
+/* users/password/new ================================ */
