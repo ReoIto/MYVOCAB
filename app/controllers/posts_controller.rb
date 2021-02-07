@@ -39,7 +39,8 @@ class PostsController < ApplicationController
                     synonyms: params[:synonyms],
                     antonyms: params[:antonyms],
                     note: params[:note],
-                    user_id: current_user.id
+                    user_id: current_user.id,
+                    start_time: Date.today
                     )
     if @post.save
       flash[:notice] = "New list has been created."

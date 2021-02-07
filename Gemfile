@@ -11,6 +11,7 @@ gem 'kaminari'
 gem 'devise'
 gem 'pry-rails'
 gem 'dotenv-rails'
+gem "simple_calendar"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
