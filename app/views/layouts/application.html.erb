@@ -63,11 +63,6 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to("/about") do %>
-                  <i class="far fa-question-circle"></i>
-                <% end %>
-              </li>
-              <li>
                 <%= link_to("/users/#{current_user.id}") do %>
                   <i class="fas fa-cog"></i>
                 <% end %>
@@ -77,11 +72,6 @@
               </li>
             <% else %>
               <!-- being NOT logged in -->
-              <li>
-                <%= link_to("/about") do %>
-                  <i class="far fa-question-circle"></i>
-                <% end %>
-              </li>
               <li>
                 <%= link_to "SIGNUP", new_user_registration_path %>
               </li>
