@@ -1,0 +1,28 @@
+.simple-calendar {
+  background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+
+  .table {
+    th {
+      text-align: center;
+    }
+    .day {}
+    .wday-0 {}
+    .wday-1 {}
+    .wday-2 {}
+    .wday-3 {}
+    .wday-4 {}
+    .wday-5 {}
+    .wday-6 {}
+    .today {}
+    .past {}
+    .future {}
+    .start-date {}
+    .prev-month {}
+    .next-month { }
+    .current-month {}
+    .has-events { background: #98fb98; }
+  }
+}

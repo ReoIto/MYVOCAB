@@ -8,5 +8,12 @@
     <% if @user.id == current_user.id %>
       <div class="btn"><%= link_to("EDIT", "/users/#{@user.id}/edit") %></div>
     <% end %>
+
+    <%= month_calendar events: @posts do |date, posts| %>
+      <%= date %>
+
+      <% posts.each do |post| %>
+      <% end %>
+    <% end %>
   </div>
 </div>

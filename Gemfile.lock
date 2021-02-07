@@ -230,6 +230,8 @@ GEM
     selenium-webdriver (3.13.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    simple_calendar (2.4.1)
+      rails (>= 3.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -296,6 +298,7 @@ DEPENDENCIES
   rspec-rails (~> 3.6)
   sass-rails (>= 6)
   selenium-webdriver (~> 3.13.1)
+  simple_calendar
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
