@@ -1,19 +1,22 @@
 <div class="main user-show">
   <div class="container">
-    <div class="user">
-      <%= image_tag "/user_images/#{@user.image_name}" %>
-      <p class="user-name"><%= @user.name %></p>
-      <p class="user-email"><%= @user.email %></p>
-    </div>
-    <% if @user.id == current_user.id %>
-      <div class="btn"><%= link_to("EDIT", "/users/#{@user.id}/edit") %></div>
-    <% end %>
-
-    <%= month_calendar events: @posts do |date, posts| %>
-      <%= date %>
-
-      <% posts.each do |post| %>
+    <div class="user-box">
+      <div class="user">
+        <%= image_tag "/user_images/#{@user.image_name}" %>
+        <p class="user-name"><%= @user.name %></p>
+        <p class="user-email"><%= @user.email %></p>
+      </div>
+      <% if @user.id == current_user.id %>
+        <div class="btn"><%= link_to "EDIT", "/users/#{@user.id}/edit" %></div>
       <% end %>
-    <% end %>
+    </div>
+
+    <div class="calendar-box">
+      <%= month_calendar events: @posts do |date, posts| %>
+        <%= date %>
+        <% posts.each do |post| %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
