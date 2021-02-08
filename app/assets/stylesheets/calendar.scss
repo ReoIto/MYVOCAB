@@ -1,28 +1,59 @@
-.simple-calendar {
-  background-color: white;
+.calendar-box {
   width: 50%;
-  margin: 0 auto;
-  text-align: center;
 
-  .table {
-    th {
-      text-align: center;
+  .calendar {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+
+    .calendar-heading {
+      .calendar-title {
+        font-size: 35px;
+      }
+
+      .calendar-change-link {
+        font-size: 30px;
+      }
     }
-    .day {}
-    .wday-0 {}
-    .wday-1 {}
-    .wday-2 {}
-    .wday-3 {}
-    .wday-4 {}
-    .wday-5 {}
-    .wday-6 {}
-    .today {}
-    .past {}
-    .future {}
-    .start-date {}
-    .prev-month {}
-    .next-month { }
-    .current-month {}
-    .has-events { background: #98fb98; }
+
+    .table {
+      .week-name {
+        text-align: center;
+        font-size: 17px;
+      }
+      .table-body {
+        background-color: rgba(0, 0, 0, 0.8);
+
+        .day {
+          border: 1px solid;
+          padding: 10px;
+        }
+        .wday-0 {}
+        .wday-1 {}
+        .wday-2 {}
+        .wday-3 {}
+        .wday-4 {}
+        .wday-5 {}
+        .wday-6 {}
+
+        .today {}
+        .past {}
+        .future {}
+
+        .start-date {}
+
+        .prev-month {
+          background-color: rgba(128,128,128, 0.3);
+        }
+        .next-month {background-color: rgba(128,128,128, 0.3);}
+        .current-month {}
+
+        .has-events {
+          background-color: rgba(0,139,139, 0.7);
+        }
+      }
+    }
   }
 }
