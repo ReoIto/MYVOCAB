@@ -2,7 +2,11 @@
   <div class="container">
     <div class="user-box">
       <div class="user">
-        <%= image_tag "/user_images/#{@user.image_name}" %>
+        <% if @user.image_name.blank? %>
+          <%= image_tag "/user_images/default_user_image.gif" %>
+        <% else %>
+          <%= image_tag "/user_images/#{@user.image_name}" %>
+        <% end %>
         <p class="user-name"><%= @user.name %></p>
         <p class="user-email"><%= @user.email %></p>
       </div>

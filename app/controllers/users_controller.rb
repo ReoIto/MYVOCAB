@@ -12,27 +12,27 @@ class UsersController < ApplicationController
     @posts = Post.where(user_id: current_user.id)
   end
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(
-                     name: params[:name],
-                     email: params[:email],
-                     birthday: params[:birthday],
-                     password: params[:password],
-                     image_name: "default_user_image.gif"
-                    )
-
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to("/users/#{@user.id}")
-      flash[:notice] = "Your account has been created."
-    else
-      render :new
-    end
-  end
+  # def new
+  #   @user = User.new
+  # end
+  #
+  # def create
+  #   @user = User.new(
+  #                    name: params[:name],
+  #                    email: params[:email],
+  #                    birthday: params[:birthday],
+  #                    password: params[:password],
+  #                    image_name: "default_user_image.gif"
+  #                   )
+  #
+  #   if @user.save
+  #     session[:user_id] = @user.id
+  #     redirect_to("/users/#{@user.id}")
+  #     flash[:notice] = "Your account has been created."
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def edit
     @user = User.find_by(id: params[:id])

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {
+   :registrations => 'users/registrations',
+   :sessions => 'users/sessions'
+  }
 
   devise_scope :user do
     get '/users/logout' => 'devise/sessions#destroy'
@@ -18,8 +21,8 @@ Rails.application.routes.draw do
 
   post 'users/:id/update'  => 'users#update', as: "users_update"
   get  'users/:id/edit'    => 'users#edit'
-  post 'users/create'      => 'users#create'
-  get  'users/new'         => 'users#new'
+  # post 'users/create'      => 'users#create'
+  # get  'users/new'         => 'users#new'
   get  'users/:id'         => 'users#show'
 
 
