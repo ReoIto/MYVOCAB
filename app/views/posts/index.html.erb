@@ -41,7 +41,11 @@
               <%= link_to(result.user.name, "/users/#{result.user.id}" ) %>
             </div>
             <div class="post-left">
-              <img src="<%= "/user_images/#{result.user.image_name}" %>">
+              <% if result.user.image_name.blank? %>
+                <%= image_tag "/user_images/default_user_image.gif" %>
+              <% else %>
+                <%= image_tag "/user_images/#{result.user.image_name}" %>
+              <% end %>
             </div>
             <div class="post-item-content">
               <%= link_to(result.content, "/posts/#{result.id}") %>

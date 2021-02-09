@@ -35,21 +35,21 @@
   }
 
   .form-item input {
-    background-color: transparent;
     width: 100%;
     border: 3px solid;
     border-radius: 5px;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   .form-item textarea {
-    background-color: transparent;
     width: 100%;
     border: 3px solid;
     border-radius: 5px;
     padding: 10px;
     color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   .form-item input:hover, textarea:hover {
@@ -70,7 +70,7 @@
       color: rgba(255, 255, 255, 0.6);
       padding: 10px;
       font-size: 25px;
-      background-color: transparent;
+      background-color: rgba(0, 0, 0, 0.8);
       border: 3px solid;
       border-radius: 5px;
     }
