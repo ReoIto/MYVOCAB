@@ -8,8 +8,11 @@
       <% end %>
       <%= form_with url: users_update_path do |f| %>
       <div class="form-item">
-        
-        <%= f.file_field :image %>
+        <%= f.label :image do %>
+          <p>Profile icon</p>
+          <i class="far fa-images"></i> <br>
+        <% end %>
+        <%= f.file_field :image, style: "display: none;" %>
       </div>
       <div class="form-item">
         <%= f.label :Name %>
