@@ -15,14 +15,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+     super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    # if params[:image]
+    #   @user.image_name = "#{@user.id}.jpg"
+    #   image = params[:image]
+    #   File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    # end
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -38,8 +43,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
 
+  private
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
@@ -47,7 +52,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+  #   devise_parameter_sanitizer.permit(:account_update, keys: [:image])
+  # end
+
+  # def user_params
+  #   params.require(:user).permit(:name, :image_)
   # end
 
   # The path used after sign up.
