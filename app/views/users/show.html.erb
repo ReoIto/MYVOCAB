@@ -2,13 +2,16 @@
   <div class="container">
     <div class="user-box">
       <div class="user">
-        <% if @user.image_name.blank? %>
-          <%= image_tag "/user_images/default_user_image.gif" %>
-        <% else %>
+        <% if @user.image_name.present? %>
           <%= image_tag "/user_images/#{@user.image_name}" %>
+        <% else %>
+          <%= image_tag "/user_images/default_user_image.gif" %>
         <% end %>
         <p class="user-name"><%= @user.name %></p>
-        <p class="user-email"><%= @user.email %></p>
+
+        <% if @user.id == current_user.id %>
+          <p class="user-email"><%= @user.email %></p>
+        <% end %>
       </div>
       <% if @user.id == current_user.id %>
         <div class="btn"><%= link_to "EDIT", "/users/#{@user.id}/edit" %></div>
@@ -16,7 +19,7 @@
     </div>
 
     <div class="calendar-box">
-      <%= month_calendar events: @posts do |date, posts| %>
+      <%= month_calendar events: @user.posts do |date, posts| %>
         <%= date %>
         <% posts.each do |post| %>
         <% end %>
