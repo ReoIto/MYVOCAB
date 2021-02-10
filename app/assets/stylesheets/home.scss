@@ -1,18 +1,4 @@
 /* top ================================ */
-.top-main {
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-  background-size: cover;
-  background-image: url("top.jpg");
-  background-color:rgba(255,255,255,0.1);
-  background-blend-mode:lighten;
-}
-
 .top-message {
     display: inline-block;
     text-align: center;
@@ -32,48 +18,83 @@
   font-size: 30px;
 }
 
-/* フォーム================================ */
-.form {
+/* top/users-new ================================ */
+
+.users-new, .top-main {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("top.jpg");
+  background-color:rgba(255,255,255,0.1);
+  background-blend-mode:lighten;
+
+  .form-heading {
+      font-weight: 400;
+      margin: 10px;
+      margin-top: 100px;
+      font-size: 45px;
+      color: white;
+  }
+
+  .form {
     max-width: 500px;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 2px 6px #c1ced7;
     padding: 15px;
     border-radius: 20px;
+
+      input {
+        width: 80%;
+        border: 1px solid #d8dadf;
+        padding: 10px;
+        color: #57575f;
+        font-size: 16px;
+        letter-spacing: 2px;
+        border-radius: 2px;
+        display: block;
+        margin: 0 auto;
+      }
+  }
+
+  .top-users-form {
+      display: inline-block;
+      width: 500px;
+      float: right;
+      margin: 90px 130px 0 0;
+
+      .form-error {
+        color: #ff4d75;
+      }
+  }
 }
 
-.top-users-form {
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 2px 6px #c1ced7;
-    padding: 15px;
-    border-radius: 20px;
-    display: inline-block;
-    width: 500px;
-    float: right;
-    margin: 90px 130px 0 0;
-}
-
-.form-head {
-    font-size: 30px;
-    color: black;
-    padding-bottom: 10px;
-    opacity: 0.7;
-}
-
-.form-heading {
-    font-weight: 400;
-    margin: 10px;
-    margin-top: 100px;
-    font-size: 45px;
-    color: white;
-}
+// .form-head {
+//     font-size: 30px;
+//     color: black;
+//     padding-bottom: 10px;
+//     opacity: 0.7;
+// }
 
 .form-body {
   padding: 30px;
 }
 
-.form-error {
-  color: #ff4d75;
+.form input {
+    width: 80%;
+    border: 1px solid #d8dadf;
+    padding: 10px;
+    color: #57575f;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
 }
 
 .form-title {
@@ -88,17 +109,7 @@ span.required {
     padding-left: 20px;
 }
 
-.form input {
-    width: 80%;
-    border: 1px solid #d8dadf;
-    padding: 10px;
-    color: #57575f;
-    font-size: 16px;
-    letter-spacing: 2px;
-    border-radius: 2px;
-    display: block;
-    margin: 0 auto;
-}
+
 
 /* select_dateで生年月日フォーム作成を試みた時のやつ */
 .select-birthday {
