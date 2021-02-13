@@ -9,6 +9,7 @@ class User < ApplicationRecord
   # has_secure_password
 
 
+
   validates :name, {
                     presence: true,
                     length: {maximum: 100}
@@ -23,5 +24,4 @@ class User < ApplicationRecord
   def posts
     return Post.where(user_id: self.id)
   end
-
 end
