@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post 'logout'            => 'users#logout'
 
   post 'users/:id/update'  => 'users#update', as: "users_update"
-  # get  'users/:id/edit'    => 'users#edit'
+  get  'users/:id/edit'    => 'users#edit', as: "users_edit"
   # post 'users/create'      => 'users#create'
   # get  'users/new'         => 'users#new'
   get  'users/:id'         => 'users#show'
