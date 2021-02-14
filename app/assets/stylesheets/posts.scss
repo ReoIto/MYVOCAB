@@ -119,13 +119,14 @@
 
     .posts-show-item-box {
         padding: 40px;
-        background-color: rgba(191,187,170,0.7);
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 3px solid;
         overflow: hidden;
         width: 50%;
         height: 650px;
         margin: 15px;
         border-radius: 30px;
-        color: black;
+        color: white;
 
         .posts-show-item-content {
             font-size: 60px;
@@ -160,7 +161,7 @@
         }
 
         .posted-time {
-            color: black;
+            color: white;
             margin: 10px 0 0 30px;
             font-size: 25px;
             display: inline-block;
@@ -174,20 +175,23 @@
 
             .post-menu {
               font-size: 14px;
-              border: 1px solid;
+              border: 3px solid;
               border-radius: 10px;
               display: inline-block;
               width: 100px;
-              background-color: rgba(191,187,170, 0.2);
 
               &:hover {
-                box-shadow: 2px 2px 4px black;
+                border: 3px solid darkcyan;
               }
 
               a {
-                color: black;
+                color: white;
                 display: block;
                 padding: 10px;
+
+                &:hover {
+                  color: darkcyan;
+                }
               }
             }
         }
@@ -198,12 +202,8 @@
             margin-left: 20px;
 
             a {
-              color: black;
-
-              &:hover {
-                text-shadow: 2px 2px 4px black;
-                cursor: pointer;
-              }
+              color: white;
+              cursor: pointer;
             }
         }
     }
