@@ -163,123 +163,115 @@
 /* posts/show ================================ */
 
 .posts-show {
-  background-color: black;
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+
+  form { display: none;}
+
+  .post-show-container {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    padding-top: 30px;
+
+    .posts-show-item-box {
+        padding: 40px;
+        background-color: rgba(191,187,170,0.7);
+        overflow: hidden;
+        width: 50%;
+        height: 650px;
+        margin: 15px;
+        border-radius: 30px;
+        color: black;
+
+        .posts-show-item-content {
+            font-size: 60px;
+            line-height: 45px;
+            text-align: center;
+        }
+
+        .posts-show-item-meaning {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #notes {
+          margin-top: 50px;
+        }
+
+        .posts-show-item {
+            padding: 0 10px 45px 10px;
+
+            .item-header {
+                font-size: 22px;
+                font-weight: 600;
+                padding-bottom: 5px;
+            }
+
+            p {
+              border-bottom: 2px dashed;
+              margin-left: 20px;
+              font-size: 20px;
+            }
+        }
+
+        .posted-time {
+            color: black;
+            margin: 10px 0 0 30px;
+            font-size: 25px;
+            display: inline-block;
+        }
+
+        .post-menus {
+            display: inline-block;
+            float: right;
+            text-align: center;
+            padding: 10px;
+
+            .post-menu {
+              font-size: 14px;
+              border: 1px solid;
+              border-radius: 10px;
+              padding: 10px;
+              display: inline-block;
+              width: 100px;
+              background-color: rgba(191,187,170, 0.2);
+
+              &:hover {
+                box-shadow: 2px 2px 4px black;
+              }
+
+              a {
+                color: black;
+                display: block;
+              }
+            }
+        }
+
+        .bookmarked-icon {
+            float: left;
+            font-size: 40px;
+            margin-left: 20px;
+
+            a {
+              color: black;
+
+              &:hover {
+                text-shadow: 2px 2px 4px black;
+                cursor: pointer;
+              }
+            }
+        }
+    }
+  }
 }
 
-.posts-show form {
-  display: inline;
-}
 
-.post-show-container {
-  max-width: 1440px;
-  width: 100%;
-  display: flex;
-  padding-top: 30px;
-}
 
-.posts-show-item-box {
-    padding: 40px;
-    background-color: rgba(191,187,170,0.6);
-    overflow: hidden;
-    width: 50%;
-    height: 650px;
-    margin: 10px;
-    border-radius: 20px;
-    color: black;
-}
-
-.post-user-name {
-    float: right;
-    margin: -30px;
-}
-
-.post-user-name img {
-  width: 60px;
-  height: 60px;
-  border-radius: 40%;
-  /*box-shadow: 0 2px 6px #c1ced7; */
-  background-color: black;
-  vertical-align: middle;
-  object-fit: cover;
-}
-
-.posts-show-item-box .post-user-name a {
-  vertical-align: middle;
-  font-size: 24px;
-  margin-left: 15px;
-  color: black;
-}
-
-.posts-show-item-content {
-    font-size: 60px;
-    line-height: 45px;
-    text-align: center;
-}
-
-.posts-show-item-meaning {
-    font-size: 20px;
-    margin-left: 10px;
-    text-align: center;
-}
-
-.posts-show-item {
-    padding: 0 10px 10px 10px;
-}
-
-.item-header {
-    font-size: 22px;
-    font-weight: 600;
-    padding-bottom: 5px;
-}
-
-.posts-show-item p {
-    border-bottom: 2px dashed;
-    margin-left: 20px;
-    font-size: 20px;
-}
-
-.posted-time {
-    color: #8899a6;
-    margin: 30px 0 0 30px;
-    display: inline-block;
-}
-
-.post-menus {
-    display: inline-block;
-    float: right;
-    text-align: center;
-    padding: 10px;
-}
-
-.post-menus a, .post-menus input {
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.post-menus a {
-    border: 1px solid;
-    padding: 10px;
-    display: inline-block;
-    width: 100px;
-}
-
-.bookmarked-icon {
-    float: left;
-    font-size: 40px;
-    margin-left: 20px;
-}
-
-.book-image img {
-    width: 1050px;
-    margin: -20px 0 0 40px;
-}
-
-.post-show-image-box {
-    background-image: url(background_img.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 /* posts/personal_index ================================*/
 
