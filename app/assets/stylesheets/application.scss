@@ -123,7 +123,6 @@ header {
   height: 80px;
   position: fixed;
   z-index: 100;
-  padding-left: 30px;
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -131,6 +130,7 @@ header {
   display: inline-block;
   line-height: 80px;
   font-size: 40px;
+  margin-left: 15px;
 }
 
 .header-name a {
@@ -141,7 +141,7 @@ header {
 
 .header-menu {
   float:right;
-  margin-right: 50px;
+  margin-right: 5px;
 }
 
 .header-menu ul {
@@ -168,7 +168,7 @@ header {
 .search_bar input {
   vertical-align: middle;
   padding: 5px;
-  width: 300px;
+  width: 270px;
   height: 35px;
 }
 
