@@ -5,79 +5,19 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-attachment: fixed;
-}
 
-.posts-index-container {
-  background-size: 1150px 720px;
+  .posts-index-container {
+    background-size: 1150px 720px;
 
-  .posts-new-index-container {
-    display: flex;
-    margin: 0 5px;
-    padding-bottom: 30px;
-  }
-}
-
-.new-post-form {
-  width: 35%;
-  margin: 0 5px;
-
-  .new-post-form-heading {
-    font-size: 30px;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .form-item {
-    font-size: 27px;
-    padding: 0px 7px 7px 7px;
-  }
-
-  .form-item input {
-    width: 100%;
-    border: 3px solid;
-    border-radius: 5px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  .form-item textarea {
-    width: 100%;
-    border: 3px solid;
-    border-radius: 5px;
-    padding: 10px;
-    color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  .form-item input:hover, textarea:hover {
-    color: white;
-  }
-
-  ::placeholder {color: rgba(255, 255, 255, 0.6);}
-
-  .form-item-content {
-    font-size: 50px;
-  }
-
-  .submit {
-    text-align: center;
-    margin-top: 10px;
-
-    input[type="submit"] {
-      color: rgba(255, 255, 255, 0.6);
-      padding: 10px;
-      font-size: 25px;
-      background-color: rgba(0, 0, 0, 0.8);
-      border: 3px solid;
-      border-radius: 5px;
+    .posts-new-index-container {
+      display: flex;
+      margin: 0 5px;
+      padding-bottom: 30px;
     }
 
-    input[type="submit"]:hover {
-      background-color: rgba(0,139,139 ,0.5 );
-      color: white;
+    .new-post-form {
+      width: 35%;
+      margin: 0 5px;
     }
   }
 }
@@ -236,7 +176,6 @@
               font-size: 14px;
               border: 1px solid;
               border-radius: 10px;
-              padding: 10px;
               display: inline-block;
               width: 100px;
               background-color: rgba(191,187,170, 0.2);
@@ -248,6 +187,7 @@
               a {
                 color: black;
                 display: block;
+                padding: 10px;
               }
             }
         }
@@ -295,9 +235,10 @@
 }
 
 
-/* posts/new ================================*/
+/* posts/new,
+   posts/edit   ================================*/
 
-.posts-new {
+.posts-new, .posts-edit {
   background-image: url(background_img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -309,7 +250,7 @@
       margin: 0 0 10px 0;
     }
 
-    .new-post-form {
+    .post-form {
       margin: 0 auto;
       width: 70%;
       height: 650px;
