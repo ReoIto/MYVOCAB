@@ -15,7 +15,7 @@
         <% end %>
 
         <%= form_with(url: user_registration_path, model: @user, local: true) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
+          <%# <%= render "devise/shared/error_messages", resource: resource %> 
 
 
           <div class="field">
