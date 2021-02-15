@@ -5,7 +5,7 @@
       <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
 
       <div class="form-item form-item-content">
-        <%= f.text_field :content, placeholder: "Vocab" %>
+        <%= f.text_field :content, placeholder: "Vocab", autofocus: true %>
       </div>
       <div class="form-item">
         <%= f.text_field :meaning, placeholder: "Meaning" %>
