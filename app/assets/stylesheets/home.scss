@@ -37,7 +37,7 @@
   .form-heading {
       font-weight: 400;
       margin: 10px;
-      margin-top: 100px;
+      margin-top: 50px;
       font-size: 45px;
       color: white;
   }
@@ -123,7 +123,7 @@ span.required {
     cursor: pointer;
     font-weight: 600;
     width: 150px;
-    margin-top: 13px;
+    margin: 10px auto; 
     box-shadow: 0 2px 6px #c1ced7;
     border-radius: 20px;
 }
