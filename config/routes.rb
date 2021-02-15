@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   # post 'users/create'      => 'users#create'
   # get  'users/new'         => 'users#new'
   get  'users/:id'         => 'users#show'
+  get  'users/thanks'      => 'users#thanks'
 
 
   get  'posts/index'       => 'posts#index'
@@ -39,5 +40,7 @@ Rails.application.routes.draw do
 
   get  'top'               => 'home#top', as: "top"
   get  'about'             => 'home#about'
+
+  get  'thanks'            => 'home#thanks'
 
 end

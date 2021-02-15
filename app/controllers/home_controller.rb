@@ -6,6 +6,9 @@ class HomeController < ApplicationController
   def about
   end
 
+  def thanks
+  end
+
   private
 
   def resource_name
