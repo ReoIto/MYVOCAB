@@ -1,8 +1,12 @@
 <div class="main top-main">
   <div class="top-message">
     <h2>MYVOCAB</h2>
-    <p>Create a list of vocabulary that only you need,<br>
-       by you, for you.
+    <p>
+      あなたが作る、
+      <br>
+      あなたのための、
+      <br>
+      本当に必要な英単語リスト
     </p>
   </div>
 
@@ -15,21 +19,21 @@
         <% end %>
 
         <%= form_with(url: user_registration_path, model: @user, local: true) do |f| %>
-          <%# <%= render "devise/shared/error_messages", resource: resource %> 
+          <%# <%= render "devise/shared/error_messages", resource: resource %>
 
 
           <div class="field">
-            <%= f.label :name %><br />
-            <%= f.text_field :name %>
+            <%= f.label :ニックネーム %><br />
+            <%= f.text_field :name, autofocus: true %>
           </div>
 
           <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.label :メールアドレス %><br />
+            <%= f.email_field :email, autocomplete: "email" %>
           </div>
 
           <div class="field">
-            <%= f.label :password %>
+            <%= f.label :"パスワード(6文字以上)" %>
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
@@ -37,15 +41,15 @@
           </div>
 
           <div class="field">
-            <%= f.label :password_confirmation %><br />
+            <%= f.label :"パスワード(確認用)" %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "はじめる" %>
           </div>
         <% end %>
 
-
+        <%= render "devise/shared/links" %>
   </div>
 </div>
