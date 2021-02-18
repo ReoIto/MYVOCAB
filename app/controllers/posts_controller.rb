@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+
   # before_action :authenticate_user
   # before_action :ensure_current_user, {only: [:edit, :update, :destroy]}
 
   def index
-    @search= Post.ransack(params[:q])
+    @search = Post.ransack(params[:q])
     @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(14)
     @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(14)
     @post = Post.new
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @id = params[:id]
-    @post = Post.find_by(id: params[:id] )
+    @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
   end
@@ -43,15 +44,16 @@ class PostsController < ApplicationController
                     start_time: Date.today
                     )
     if @post.save
-      flash[:notice] = "New list has been created."
-      redirect_to ("/posts/#{@post.user_id}/index")
+      flash[:notice] = 'New list has been created.'
+      redirect_to("/posts/#{@post.user_id}/index")
     else
-      render :new
+      flash[:notice] = "Vocab can't be blank."
+      render('posts/new')
     end
   end
 
   def edit
-    @post = Post.find_by(id: params[:id] )
+    @post = Post.find_by(id: params[:id])
   end
 
   def update
@@ -63,26 +65,25 @@ class PostsController < ApplicationController
     @post.antonyms = params[:antonyms]
     @post.note     = params[:note]
     if @post.save
-      flash[:notice] = "The list has been edited."
-      redirect_to("/posts/index")
+      flash[:notice] = 'The list has been edited.'
+      redirect_to('/posts/index')
     else
-      render("posts/edit")
+      render('posts/edit')
     end
   end
 
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
-    flash[:notice] = "the list has been deleted."
-    redirect_to("/posts/index")
+    flash[:notice] = 'the list has been deleted.'
+    redirect_to('/posts/index')
   end
 
   def ensure_current_user
     @post = Post.find_by(id: params[:id])
-      if @post.user_id != @current_user.id
-        flash[:notice] = "You don't have the authority to."
-        redirect_to("/posts/index")
-      end
+    
+    return unless @post.user_id != @current_user.id
+      flash[:notice] = "You don't have the authority to."
+      redirect_to('/posts/index')
   end
-
 end
