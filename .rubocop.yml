@@ -1,0 +1,14 @@
+AllCops:
+  TargetRubyVersion: 2.6
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
