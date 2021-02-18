@@ -13,6 +13,7 @@ gem 'pry-rails'
 gem 'dotenv-rails'
 gem "simple_calendar"
 gem 'devise-i18n'
+gem 'rubocop-rails', require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
