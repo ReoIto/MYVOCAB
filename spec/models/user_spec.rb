@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # pending "add some examples to (or delete) #{__FILE__}"
 
   describe User, type: :model do
     # 名前、メール、パスワードがあれば有効な状態であること
@@ -19,14 +19,14 @@ RSpec.describe User, type: :model do
     it "is invalid without a name" do
       user = User.new(name: nil)
       user.valid?
-      expect(user.errors[:name]).to include("can't be blank")
+      expect(user.errors[:name]).to include("が入力されていません。")
     end
 
     # メールアドレスがなければ無効な状態であること
     it "is invalid without an email" do
       user = User.new(email: nil)
       user.valid?
-      expect(user.errors[:email]).to include("can't be blank")
+      expect(user.errors[:email]).to include("が入力されていません。")
     end
 
     # 重複したメールアドレスなら無効な状態であること
@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
         password: "kkdjgakjgj"
       )
       user.valid?
-      expect(user.errors[:email]).to include("has already been taken")
+      expect(user.errors[:email]).to include("は既に使用されています。")
     end
 
     # 名前の文字数が100文字以上の場合無効な状態であること
