@@ -162,6 +162,8 @@ ja:
       expired: の有効期限が切れました。新しくリクエストしてください。
       not_found: は見つかりませんでした。
       not_locked: は凍結されていません。
+      too_long: "%{count}文字以内に設定して下さい。"
+      too_short: "は%{count}文字以上に設定して下さい。"
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"

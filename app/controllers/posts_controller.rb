@@ -47,8 +47,8 @@ class PostsController < ApplicationController
       flash[:notice] = 'New list has been created.'
       redirect_to("/posts/#{@post.user_id}/index")
     else
-      flash[:notice] = "Vocab can't be blank."
-      render('posts/new')
+      flash[:notice] = "Failed to create a new list :("
+      render 'new'
     end
   end
 
@@ -81,7 +81,7 @@ class PostsController < ApplicationController
 
   def ensure_current_user
     @post = Post.find_by(id: params[:id])
-    
+
     return unless @post.user_id != @current_user.id
       flash[:notice] = "You don't have the authority to."
       redirect_to('/posts/index')
