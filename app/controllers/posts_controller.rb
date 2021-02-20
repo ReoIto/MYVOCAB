@@ -47,7 +47,7 @@ class PostsController < ApplicationController
       flash[:notice] = 'New list has been created.'
       redirect_to("/posts/#{@post.user_id}/index")
     else
-      flash[:notice] = "Failed to create a new list :("
+      flash[:notice] = 'Failed to create a new list :('
       render 'new'
     end
   end
