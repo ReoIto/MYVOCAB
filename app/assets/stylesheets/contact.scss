@@ -1,0 +1,183 @@
+.contact-page {
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+
+  .container {
+
+    .form-heading {
+      text-align: center;
+      margin: 0 0 10px 0;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .contact-form {
+      margin: 0 auto;
+      width: 70%;
+      height: 650px;
+
+      .error {
+        color: red;
+        margin-left: 10px;
+
+        li {
+          margin-left: 20px;
+        }
+      }
+
+      .form-item {
+        font-size: 27px;
+        padding: 0px 7px 7px 7px;
+
+        input:hover, textarea:hover {
+          color: white;
+        }
+
+        ::placeholder {
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        label {
+          color: white;
+        }
+
+        input {
+          width: 100%;
+          border: 3px solid;
+          border-radius: 5px;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.6);
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        textarea {
+          width: 100%;
+          border: 3px solid;
+          border-radius: 5px;
+          padding: 10px;
+          color: rgba(255, 255, 255, 0.6);
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      .submit {
+        text-align: center;
+        margin-top: 10px;
+
+        input[type=submit] {
+          color: rgba(255, 255, 255, 0.6);
+          padding: 10px;
+          font-size: 25px;
+          background-color: rgba(0, 0, 0, 0.8);
+          border: 3px solid;
+          border-radius: 5px;
+
+          &:hover {
+            background-color: rgba(0,139,139 ,0.5 );
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------------------Confirm-------------------------
+
+.contact-confirm-page {
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+
+  .container  {
+    .form-heading {
+      text-align: center;
+      margin: 0 0 10px 0;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .contact-form {
+      margin: 0 auto;
+      width: 70%;
+      background-color: rgba(0, 0, 0, 0.8);
+
+      .form-item {
+        font-size: 27px;
+        padding: 0px 7px 7px 7px;
+        color: white;
+        border-bottom: 2px dashed;
+        margin-bottom: 30px;
+
+        label {
+          font-size: 20px;
+          color: gray;
+          display: block;
+        }
+      }
+
+      .submit {
+        text-align: center;
+        margin-top: 10px;
+
+        input[type=submit] {
+          color: rgba(255, 255, 255, 0.6);
+          padding: 10px;
+          font-size: 25px;
+          background-color: rgba(0, 0, 0, 0.8);
+          border: 3px solid;
+          border-radius: 5px;
+
+          &:hover {
+            background-color: rgba(0,139,139 ,0.5 );
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------------------Thanks-------------------------
+
+.contact-thanks-page {
+  background-image: url(background_img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+
+  .container {
+    .box {
+      text-align: center;
+      width: 70%;
+      border-radius: 30px;
+      padding: 30px;
+      margin: 0 auto;
+      margin-top: 100px;
+      background-color: white;
+      opacity: 0.5;
+
+      img {
+        width: 350px;
+      }
+
+      .form-heading {
+        color: black;
+        h1 {
+          font-size: 60px;
+        }
+        p {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
