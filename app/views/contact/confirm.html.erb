@@ -1,0 +1,32 @@
+<div class="main contact-confirm-page">
+  <div class="container">
+    <div class="form-heading">
+      <h1>CONFIRM</h1>
+    </div>
+    <%= form_for @contact, :url => contact_thanks_path do |f| %>
+      <div class="contact-form">
+        <div class="form-item">
+          <%= f.label :名前 %>
+          <%= f.hidden_field :name %>
+          <%= @contact.name %>
+        </div>
+
+        <div class="form-item">
+          <%= f.label :メールアドレス %>
+          <%= f.hidden_field :email %>
+          <%= @contact.email %>
+        </div>
+
+        <div class="form-item">
+          <%= f.label :お問合せ内容 %>
+          <%= f.hidden_field :message, size: "30x6" %>
+          <%= simple_format(@contact.message) %>
+        </div>
+
+        <div class="submit">
+          <%= f.submit '送信' %>
+        </div>
+      </div>  
+    <% end %>
+  </div>
+</div>

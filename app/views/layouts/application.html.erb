@@ -64,7 +64,12 @@
               </li>
               <li>
                 <%= link_to("/users/#{current_user.id}") do %>
-                  <i class="fas fa-cog"></i>
+                  <i class="far fa-user-circle"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to("/contact") do %>
+                  <i class="far fa-envelope"></i>
                 <% end %>
               </li>
               <li>
