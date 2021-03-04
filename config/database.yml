@@ -6,7 +6,7 @@
 #
 
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   socket: /tmp/mysql.sock
@@ -16,7 +16,7 @@ default: &default
 #  <<: *default
 #  database: db/development.sqlite3
 
-development:
+development:     
   adapter: mysql2
   encoding: utf8
   database: myvocab_development
@@ -50,10 +50,7 @@ test:
 #  database: db/production.sqlite3
 
 production:
-  adapter: mysql2
-  encoding: utf8
+  <<: *default
   database: myvocab_production
-  pool: <%= ENV['MYVOCAB_DB_POOL'] %>
-  username: <%= ENV['MYVOCAB_DB_USER_NAME'] %>
-  password: <%= ENV['MYVOCAB_DB_PASSWD'] %>
-  host: <%= ENV['MYVOCAB_DB_HOST'] %>
+  username: <%= ENV['DB_PROD_USER_NAME'] %>
+  password: <%= ENV['DB_PROD_PASSWD'] %>

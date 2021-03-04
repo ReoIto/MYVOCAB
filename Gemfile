@@ -17,7 +17,6 @@ gem 'rubocop-rails', require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '~> 1.4'
 gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -54,6 +53,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :test do
@@ -62,6 +62,11 @@ group :test do
   gem 'selenium-webdriver', '~> 3.13.1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production, :staging do
+  gem 'unicorn', '5.8.0'
+  gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
