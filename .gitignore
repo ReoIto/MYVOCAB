@@ -43,4 +43,5 @@ gibo 2.2.4 by Simon Whitaker <sw@netcetera.org>
 /.env
 /config/unicorn.conf.rb
 /myvocab_production
+/app/views/layouts/_google_analytics.html.erb
 /config/secrets.yml
