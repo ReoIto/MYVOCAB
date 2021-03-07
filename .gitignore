@@ -45,3 +45,5 @@ YOUR-FILE-WITH-SENSITIVE-DATA
 /.env
 /config/unicorn.conf.rb
 /myvocab_production
+/app/views/layouts/_google_analytics.html.erb
+
