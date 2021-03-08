@@ -1,4 +1,20 @@
 /*--------------------For PC-------------------- */
+.field_with_errors {
+  display: contents;
+
+  input {
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+}
+
+.form-error {
+  color: red;
+}
+
+#flash_alert {
+    color: red;
+}
+
 @media (min-width:770px) {
 
   /* top ================================ */
@@ -21,8 +37,8 @@
       margin-top: 150px;
   }
 
-  /* top/signup,
-     top/login       ================================ */
+  /* users/signup,
+     users/login       ================================ */
 
   .users-new, .top-main {
     text-align: center;
@@ -38,11 +54,11 @@
     background-blend-mode:lighten;
 
     .form-heading {
-        font-weight: 400;
-        margin: 10px;
-        margin-top: 50px;
-        font-size: 45px;
-        color: white;
+      font-weight: 400;
+      margin: 10px;
+      margin-top: 50px;
+      font-size: 45px;
+      color: white;
     }
 
     .form {
@@ -53,16 +69,18 @@
       padding: 15px;
       border-radius: 20px;
 
-      input {
-        width: 80%;
-        border: 1px solid #d8dadf;
-        padding: 10px;
-        color: #57575f;
-        font-size: 16px;
-        letter-spacing: 2px;
-        border-radius: 2px;
-        display: block;
-        margin: 0 auto;
+      .field {
+        input {
+          width: 80%;
+          border: 1px solid #d8dadf;
+          padding: 10px;
+          color: #57575f;
+          font-size: 16px;
+          letter-spacing: 2px;
+          border-radius: 2px;
+          display: block;
+          margin: 0 auto;
+        }
       }
     }
 
@@ -73,7 +91,7 @@
       margin: 90px 130px 0 0;
 
       .form-error {
-        color: #ff4d75;
+        color: red;
       }
     }
   }
@@ -112,9 +130,10 @@
     background-color: #FF8C00;
     color: white;
     cursor: pointer;
-    font-weight: 600;
-    width: 150px;
+    width: 200px;
     margin: 10px auto;
+    padding: 7px;
+    font-size: 20px;
     box-shadow: 0 2px 6px #c1ced7;
     border-radius: 20px;
   }
@@ -187,7 +206,12 @@
 
 /*--------------------For PHONES-------------------- */
 @media (max-width:767.98px) {
-  .top-main {
+
+  .users-new {
+    position: fixed;
+  }
+
+  .top-main, .users-new {
     width: 100%;
     min-height: 100%;
     background-repeat: no-repeat;
@@ -197,6 +221,10 @@
     background-color: rgba(255,255,255,0.1);
     background-blend-mode: lighten;
     padding-top: 50px;
+
+    .container {
+      padding: 0;
+    }
 
     .top-message {
       padding: 40px 0;
@@ -214,19 +242,31 @@
       }
     }
 
-    .form, .top-users-form {
+    .form-heading {
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      margin-top: 20px;
+    }
+
+    .form, .top-users-form, .users-form  {
       margin: 0 auto;
       background-color: rgba(255, 255, 255, 0.6);
       padding: 15px;
-      margin-top: 30px;
+      border-radius: 20px;
+      margin: 20px 5px 0 5px;
 
-      .form-error {}
+      .form-error {
+        color: red;
+      }
+
       .field {
         input {
           width: 100%;
           padding: 10px;
         }
       }
+
       .action {
         text-align: center;
 
