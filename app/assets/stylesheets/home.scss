@@ -188,7 +188,6 @@
 /*--------------------For PHONES-------------------- */
 @media (max-width:767.98px) {
   .top-main {
-    position: fixed;
     width: 100%;
     min-height: 100%;
     background-repeat: no-repeat;
@@ -204,7 +203,7 @@
       text-align: center;
 
       h2 {
-        font-size: 40px;
+        font-size: 55px;
         letter-spacing: 3px;
         margin: 20px 0;
       }
