@@ -4,6 +4,7 @@
     <title>MyVocab</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -23,7 +24,7 @@
               <%= link_to("MYVOCAB", "/posts/index") %>
             <% else %>
             <!-- being NOT logged in -->
-              <%= link_to("MY VOCAB", "/top") %>
+              <%= link_to("MYVOCAB", "/top") %>
             <% end %>
           </div>
           <!-- Flash message -->
