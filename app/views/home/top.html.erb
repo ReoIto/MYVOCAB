@@ -21,7 +21,6 @@
         <%= form_with(url: user_registration_path, model: @user, local: true) do |f| %>
           <%# <%= render "devise/shared/error_messages", resource: resource %>
 
-
           <div class="field">
             <%= f.label :ニックネーム %><br />
             <%= f.text_field :name, autofocus: true %>
@@ -45,7 +44,7 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           </div>
 
-          <div class="actions">
+          <div class="action">
             <%= f.submit "はじめる" %>
           </div>
         <% end %>
