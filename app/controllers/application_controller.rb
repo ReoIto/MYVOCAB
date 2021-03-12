@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   #    flash[:notice] = "Please login to your account."
   #    redirect_to("/login")
   #  end
-  #end
+  # end
 
   def forbid_login_user
     if current_user
