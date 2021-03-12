@@ -1,9 +1,8 @@
 <div class="main posts-index">
+  <div class="pagination-box">
+    <%= paginate @posts %>
+  </div>
   <div class="posts-index-container">
-    <div class="pagination-box">
-      <%= paginate @posts %>
-    </div>
-
     <div class="posts-new-index-container">
       <div class="post-form">
         <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
@@ -32,8 +31,6 @@
       </div>
 
 
-
-      <% if @searched_posts %>
       <div class="posts-index-box">
         <% @searched_posts.each do |result| %>
           <div class="posts-index-item">
@@ -52,23 +49,7 @@
             </div>
           </div>
         <% end %>
-        </div>
-
-      <% else %>
-        <% @posts.each do |post| %>
-        <div class="posts-index-item">
-          <div class="post-left">
-            <img src="<%= "/user_images/#{post.user.image_name}" %>">
-          </div>
-          <div class="post-item-username">
-            <%= link_to(post.user.name, "/users/#{post.user.id}" ) %>
-          </div>
-          <div class="post-item-content">
-            <%= link_to(post.content, "/posts/#{post.id}") %>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
+      </div>
     </div>
     <div class="pagination-box">
       <%= paginate @posts %>
