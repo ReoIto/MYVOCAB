@@ -1,9 +1,8 @@
 <div class="main posts-index">
+  <div class="pagination-box">
+    <%= paginate @personal_posts %>
+  </div>
   <div class="posts-index-container">
-    <div class="pagination-box">
-      <%= paginate @personal_posts %>
-    </div>
-
     <div class="posts-new-index-container">
       <div class="post-form">
         <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
