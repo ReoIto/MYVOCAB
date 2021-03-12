@@ -38,13 +38,13 @@
         <% @searched_posts.each do |result| %>
           <div class="posts-index-item">
             <div class="post-item-username">
-              <%= link_to(result.user.name, "/users/#{result.user.id}" ) %>
+              <%= result.user.name %>
             </div>
             <div class="post-left">
               <% if result.user.image_name.blank? %>
-                <%= image_tag "/user_images/default_user_image.gif" %>
+                <%= link_to image_tag("/user_images/default_user_image.gif"), "/users/#{result.user.id}" %>
               <% else %>
-                <%= image_tag "/user_images/#{result.user.image_name}" %>
+                <%= link_to image_tag("/user_images/#{result.user.image_name}"), "/users/#{result.user.id}" %>
               <% end %>
             </div>
             <div class="post-item-content">

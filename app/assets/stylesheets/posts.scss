@@ -441,6 +441,10 @@
   }
 }
 
+
+
+
+
 /*--------------------For PHONES-------------------- */
 @media (max-width:767.98px) {
   .posts-index {
@@ -448,10 +452,16 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    padding-top: 50px;
+    padding-top: 70px;
 
     .posts-index-container {
-      .pagenation-box {}
+      .pagenation-box {
+        margin-top: -15px;
+        .pagination {
+          display: block !important;
+          justify-content: center !important;
+        }
+      }
       .posts-new-index-container {
         .post-form {
           display: none;
@@ -465,16 +475,56 @@
         }
         .posts-index-box {
           .posts-index-item {
-            .post-item-username {
-              a {}
+            border: 6px;
+            border-color: darkcyan;
+            border-style: ridge;
+            border-radius: 5px;
+            background-color: rgba(0, 139, 139, 0.6);
+            margin-bottom: 2px;
+            position: relative;
+            height: 80px;
+
+            a {
+              color: ivory;
             }
+
+            .post-item-username {
+              display: inline-block;
+              color: ivory;
+              position: absolute;
+              top: 3px;
+              left: 10px;
+            }
+
             .post-left {
-              img {
-                width: 20px;
+              float: left;
+              position: absolute;
+              bottom: 15px;
+              left: 10px;
+
+              a {
+                color: ivory;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                }
               }
             }
             .post-item-content {
-              a {}
+              text-align: center;
+              line-height: 70px;
+              margin-left: 60px;
+              font-size: 18px;
+
+              a {
+                color: ivory;
+                display: block;
+              }
             }
           }
         }
