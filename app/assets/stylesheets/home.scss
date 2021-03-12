@@ -283,4 +283,15 @@
       }
     }
   }
+
+  .flash {
+    color: #7c7575;
+    z-index: 10;
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    border-bottom: 2px solid;
+    border-color: darkcyan;
+    font-size: 17px;
+  }
 }
