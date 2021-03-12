@@ -195,6 +195,7 @@ a {
     .header-contents  {
       padding: 10px 10px 0 10px;
       font-size: 25px;
+      text-align: center;
 
       a {
         color: #7c7575;
@@ -206,8 +207,7 @@ a {
 
       .flash {}
       .header-menu {
-        float: right;
-        display: flex;
+        display: none;
 
         .search_bar {
           .search_btn {}

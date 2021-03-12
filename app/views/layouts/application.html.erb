@@ -16,8 +16,12 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/side_menu' %>
     <header>
         <div class="header-contents">
+
+          <label for="menu" class="open"><i class="fas fa-bars"></i></label>
+
           <div class="header-name">
             <% if user_signed_in? %>
             <!-- being logged in -->
@@ -27,67 +31,68 @@
               <%= link_to("MYVOCAB", "/top") %>
             <% end %>
           </div>
+
+
           <!-- Flash message -->
           <% if flash[:notice] %>
             <div class="flash">
-                <%= flash[:notice] %>
+              <%= flash[:notice] %>
             </div>
           <% end %>
+
           <div class="header-menu">
             <ul>
-            <% if user_signed_in? %>
+              <% if user_signed_in? %>
               <!-- being logged in -->
-
-              <!-- search bar -->
-              <%= search_form_for @search, url: posts_index_path do |f| %>
-              <div class="search_bar">
-                <%= f.search_field :content_or_meaning_cont %>
-                <div class="search_btn"><%= f.submit "Search" %></div>
-              </div>
+                <!-- search bar -->
+                <%= search_form_for @search, url: posts_index_path do |f| %>
+                <div class="search_bar">
+                  <%= f.search_field :content_or_meaning_cont %>
+                  <div class="search_btn"><%= f.submit "Search" %></div>
+                </div>
+                <% end %>
+                <li>
+                  <%= link_to("/posts/new") do %>
+                    <i class="fas fa-edit"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to("/posts/index") do %>
+                    <i class="fas fa-search"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to("/posts/#{current_user.id}/index") do %>
+                    <i class="far fa-address-book"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to("/posts/#{current_user.id}/likes") do %>
+                    <i class="fas fa-bookmark"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to("/users/#{current_user.id}") do %>
+                    <i class="far fa-user-circle"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to("/contact") do %>
+                    <i class="far fa-envelope"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+                </li>
+              <% else %>
+                <!-- being NOT logged in -->
+                <li>
+                  <%= link_to "SIGNUP", new_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to "LOGIN", new_user_session_path %>
+                </li>
               <% end %>
-
-              <li>
-                <%= link_to("/posts/new") do %>
-                  <i class="fas fa-edit"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to("/posts/index") do %>
-                  <i class="fas fa-search"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to("/posts/#{current_user.id}/index") do %>
-                  <i class="far fa-address-book"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to("/posts/#{current_user.id}/likes") do %>
-                  <i class="fas fa-bookmark"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to("/users/#{current_user.id}") do %>
-                  <i class="far fa-user-circle"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to("/contact") do %>
-                  <i class="far fa-envelope"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
-              </li>
-            <% else %>
-              <!-- being NOT logged in -->
-              <li>
-                <%= link_to "SIGNUP", new_user_registration_path %>
-              </li>
-              <li>
-                <%= link_to "LOGIN", new_user_session_path %>
-              </li>
-            <% end %>
             </ul>
           </div>
         </div>

@@ -1,0 +1,61 @@
+<input id="menu" type="checkbox" class="side-bar-checkbox">
+<label for="menu" class="back"></label>
+
+<aside class="side-menu">
+  <label for="menu" class="close"><i class="fas fa-times"></i></label>
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to("/posts/new") do %>
+            <i class="fas fa-edit"></i>
+            NEW VOCAB
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/posts/#{current_user.id}/index") do %>
+            <i class="far fa-address-book"></i>
+            MY VOCAB
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/posts/index") do %>
+            <i class="fas fa-search"></i>
+            SEARCH
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/posts/#{current_user.id}/likes") do %>
+            <i class="fas fa-bookmark"></i>
+            VOCAB YOU SAVED
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/users/#{current_user.id}") do %>
+            <i class="far fa-user-circle"></i>
+            PROFILE
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/contact") do %>
+            <i class="far fa-envelope"></i>
+            CONTACT
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/users/sign_out", method: :delete) do %>
+            <i class="fas fa-sign-out-alt"></i>
+            LOGOUT
+          <% end %>
+        </li>
+      <% else %>
+      <li>
+        <%= link_to "SIGNUP", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "LOGIN", new_user_session_path %>
+      </li>
+      <% end %>
+    </ul>
+  </nav>
+</aside>
