@@ -355,7 +355,7 @@
     .posts-index-box {
       column-count: 2;
       height: auto;
-      width: 80%;
+      width: 90%;
       margin:0 auto;
       padding-bottom: 30px;
 
@@ -370,13 +370,13 @@
         background-color: rgba(0, 139, 139, 0.8);
         position: relative;
 
-          .likes-post-left {
+          .post-left {
             float: left;
             position: absolute;
             top: 55px;
           }
 
-          .likes-post-left img {
+          .post-left img {
               width: 50px;
               height: 50px;
               border-radius: 15px;
@@ -454,7 +454,7 @@
 /*--------------------For PHONES-------------------- */
 @media (max-width:767.98px) {
 
-  .posts-index {
+  .posts-index, .main {
     background-image: url(background_img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -462,7 +462,8 @@
     padding-top: 70px;
     height: 100vh;
 
-    .posts-index-container {
+    .posts-new-index-container {
+
       .pagination-box {
         margin-top: -15px;
 
@@ -471,83 +472,74 @@
           justify-content: center !important;
         }
       }
-      .posts-new-index-container {
-        .post-form {
-          display: none;
 
-          .form-item {
-            input {}
+      .post-form { display: none; }
+      .posts-index-box {
+        .posts-index-item {
+          border: 6px;
+          border-color: darkcyan;
+          border-style: ridge;
+          border-radius: 5px;
+          background-color: rgba(0, 139, 139, 0.6);
+          margin-bottom: 4px;
+          position: relative;
+          height: 80px;
+
+          a {
+            color: ivory;
           }
-          .submit {
-            input {}
+
+          .post-item-username {
+            display: inline-block;
+            color: ivory;
+            position: absolute;
+            top: 3px;
+            left: 10px;
           }
-        }
-        .posts-index-box {
-          .posts-index-item {
-            border: 6px;
-            border-color: darkcyan;
-            border-style: ridge;
-            border-radius: 5px;
-            background-color: rgba(0, 139, 139, 0.6);
-            margin-bottom: 2px;
-            position: relative;
-            height: 80px;
+
+          .post-left {
+            float: left;
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
 
             a {
               color: ivory;
-            }
-
-            .post-item-username {
+              width: 30px;
+              height: 30px;
               display: inline-block;
+
+              img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+              }
+            }
+          }
+          .post-item-content, .personal-post-item-content {
+            text-align: center;
+            line-height: 70px;
+            margin-left: 60px;
+            font-size: 18px;
+
+            a {
               color: ivory;
-              position: absolute;
-              top: 3px;
-              left: 10px;
-            }
-
-            .post-left {
-              float: left;
-              position: absolute;
-              bottom: 15px;
-              left: 10px;
-
-              a {
-                color: ivory;
-                width: 30px;
-                height: 30px;
-                display: inline-block;
-
-                img {
-                  width: 40px;
-                  height: 40px;
-                  border-radius: 50%;
-                }
-              }
-            }
-            .post-item-content, .personal-post-item-content {
-              text-align: center;
-              line-height: 70px;
-              margin-left: 60px;
-              font-size: 18px;
-
-              a {
-                color: ivory;
-                display: block;
-              }
+              display: block;
             }
           }
         }
       }
     }
-   .post-item-bookmarked-icon {
-     position: absolute;
-     position: absolute;
-     top: 5px;
-     left: 5px;
-     font-size: 40px;
-   }
+    .post-item-bookmarked-icon {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      font-size: 40px;
+    }
   }
 
+
+//-------------------------posts/show-----------------
   .post-show, .main {
     background-image: url(background_img.jpg);
     background-size: cover;
@@ -625,6 +617,60 @@
         a {
           display: block;
           color: white;
+        }
+      }
+    }
+  }
+
+  //-------------------posts/likes------------------
+
+  .posts-likes-container {
+    .pagination-box {}
+    .posts-index-box {
+      .posts-index-item {
+        border: 6px;
+        border-color: darkcyan;
+        border-style: ridge;
+        border-radius: 5px;
+        background-color: rgba(0, 139, 139, 0.6);
+        margin-bottom: 4px;
+        position: relative;
+        height: 80px;
+
+        a {
+          color: ivory;
+        }
+
+        .post-item-username {
+          display: inline-block;
+          color: ivory;
+          position: absolute;
+          top: 3px;
+          left: 10px;
+        }
+
+        .post-left {
+          display: none;
+        }
+        .post-item-bookmarked-icon {
+          position: absolute;
+          top: 15px;
+          left: 10px;
+          font-size: 40px;
+        }
+        .likes-post-item-content {
+          margin-left: 60px;
+
+          a {
+            display: block;
+            text-align: center;
+            line-height: 68px;
+            font-size: 18px;
+          }
+
+          p {
+            display: none;
+          }
         }
       }
     }
