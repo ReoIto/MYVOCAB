@@ -1,34 +1,32 @@
 <div class="main posts-new">
-  <div class="container">
-    <h1 class="form-heading">NEW VOCAB</h1>
-    <div class="post-form">
-      <% @post.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-      <% end %>
+  <h1 class="form-heading">NEW VOCAB</h1>
+  <div class="post-form">
+    <% @post.errors.full_messages.each do |message| %>
+      <div class="form-error">
+        <%= message %>
+      </div>
+    <% end %>
 
-      <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
-        <div class="form-item form-item-content">
-          <%= f.text_field :content, placeholder: "Vocab", value: @post.content, autofocus: true %>
-        </div>
-        <div class="form-item">
-          <%= f.text_field :meaning, placeholder: "Meaning", value: @post.meaning %>
-        </div>
-        <div class="form-item">
-          <%= f.text_field :example, placeholder: "Example sentence", value: @post.example %>
-        </div>
-        <div class="form-item">
-          <%= f.text_field :synonyms, placeholder: "Synonyms", value: @post.synonyms %>
-        </div>
-        <div class="form-item">
-          <%= f.text_field :antonyms, placeholder: "Antonyms", value: @post.antonyms %>
-        </div>
-        <div class="form-item">
-          <%= f.text_area :note, size: "30x6",placeholder: "Note", value: @post.note %>
-        </div>
-        <div class="submit"><%= f.submit("Add Vocab") %></div>
-      <% end %>
-    </div>
+    <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
+      <div class="form-item form-item-content">
+        <%= f.text_field :content, placeholder: "Vocab", value: @post.content, autofocus: true %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :meaning, placeholder: "Meaning", value: @post.meaning %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :example, placeholder: "Example sentence", value: @post.example %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :synonyms, placeholder: "Synonyms", value: @post.synonyms %>
+      </div>
+      <div class="form-item">
+        <%= f.text_field :antonyms, placeholder: "Antonyms", value: @post.antonyms %>
+      </div>
+      <div class="form-item">
+        <%= f.text_area :note, size: "30x6",placeholder: "Note", value: @post.note %>
+      </div>
+      <div class="submit"><%= f.submit("Add Vocab") %></div>
+    <% end %>
   </div>
 </div>

@@ -1,55 +1,53 @@
 <div class="main posts-edit">
-  <div class="container">
-    <h1 class="form-heading">EDIT</h1>
-    <% @post.errors.full_messages.each do |message| %>
-        <div class="form-error">
-          <%= message %>
-        </div>
-    <% end %>
-    <div class="post-form">
-      <%= form_with url: posts_update_path do |f| %>
+  <h1 class="form-heading">EDIT</h1>
+  <% @post.errors.full_messages.each do |message| %>
+      <div class="form-error">
+        <%= message %>
+      </div>
+  <% end %>
+  <div class="post-form">
+    <%= form_with url: posts_update_path do |f| %>
 
-      <div class="form-item form-item-content">
-        <%= f.text_field :content, value: @post.content %>
-      </div>
-      <div class="form-item">
-        <% if @post.meaning.present? %>
-          <%= f.text_field :meaning, value: @post.meaning %>
-        <% else %>
-          <%= f.text_field :meaning, placeholder: "Meaning" %>
-        <% end %>
-      </div>
-      <div class="form-item">
-        <% if @post.meaning.present? %>
-          <%= f.text_field :example, value: @post.example %>
-        <% else %>
-          <%= f.text_field :example, placeholder: "Example" %>
-        <% end %>
-      </div>
-      <div class="form-item">
-        <% if @post.meaning.present? %>
-          <%= f.text_field :synonyms, value: @post.synonyms %>
-        <% else %>
-          <%= f.text_field :synonyms, placeholder: "Synonyms" %>
-        <% end %>
-      </div>
-      <div class="form-item">
-        <% if @post.meaning.present? %>
-          <%= f.text_field :antonyms, value: @post.antonyms %>
-        <% else %>
-          <%= f.text_field :antonyms, placeholder: "Antonyms" %>
-        <% end %>
-      </div>
-      <div class="form-item">
-        <% if @post.note.present? %>
-          <%= f.text_area :note, size: "30x6", value: @post.note %>
-        <% else %>
-          <%= f.text_area:note, size: "30x6", placeholder: "Notes" %>
-        <% end %>
-      </div>
-
-      <div class="submit"><%= f.submit("SAVE") %></div>
+    <div class="form-item form-item-content">
+      <%= f.text_field :content, value: @post.content %>
+    </div>
+    <div class="form-item">
+      <% if @post.meaning.present? %>
+        <%= f.text_field :meaning, value: @post.meaning %>
+      <% else %>
+        <%= f.text_field :meaning, placeholder: "Meaning" %>
       <% end %>
     </div>
+    <div class="form-item">
+      <% if @post.meaning.present? %>
+        <%= f.text_field :example, value: @post.example %>
+      <% else %>
+        <%= f.text_field :example, placeholder: "Example" %>
+      <% end %>
     </div>
+    <div class="form-item">
+      <% if @post.meaning.present? %>
+        <%= f.text_field :synonyms, value: @post.synonyms %>
+      <% else %>
+        <%= f.text_field :synonyms, placeholder: "Synonyms" %>
+      <% end %>
+    </div>
+    <div class="form-item">
+      <% if @post.meaning.present? %>
+        <%= f.text_field :antonyms, value: @post.antonyms %>
+      <% else %>
+        <%= f.text_field :antonyms, placeholder: "Antonyms" %>
+      <% end %>
+    </div>
+    <div class="form-item">
+      <% if @post.note.present? %>
+        <%= f.text_area :note, size: "30x6", value: @post.note %>
+      <% else %>
+        <%= f.text_area:note, size: "30x6", placeholder: "Notes" %>
+      <% end %>
+    </div>
+
+    <div class="submit"><%= f.submit("SAVE") %></div>
+    <% end %>
+  </div>
 </div>
