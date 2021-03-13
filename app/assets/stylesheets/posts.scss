@@ -152,8 +152,10 @@
           }
 
           .posts-show-item {
-              padding: 0 10px 45px 10px;
+              padding: 0 10px;
               word-wrap: break-word;
+              border-bottom: 2px dashed;
+              margin-bottom: 45px;
 
               .item-header {
                   font-size: 22px;
@@ -162,8 +164,8 @@
               }
 
               p {
-                border-bottom: 2px dashed;
                 margin-left: 20px;
+                margin-bottom: 0px;
                 font-size: 20px;
                 word-wrap: break-word;
               }
