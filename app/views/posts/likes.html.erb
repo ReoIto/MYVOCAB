@@ -8,16 +8,15 @@
     <% post = Post.find_by(id: like.post_id) %>
       <div class="posts-index-item">
         <div class="post-item-username">
-          <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          <%= post.user.name %>
         </div>
-        <div class="likes-post-left">
+        <div class="post-left">
           <% if post.user.image_name.blank? %>
-            <%= image_tag "/user_images/default_user_image.gif" %>
+            <%= link_to image_tag("/user_images/default_user_image.gif"), "/users/#{post.user.id}" %>
           <% else %>
-            <%= image_tag "/user_images/#{post.user.image_name}" %>
+            <%= link_to image_tag("/user_images/#{post.user.image_name}"), "/users/#{post.user.id}" %>
           <% end %>
         </div>
-
         <% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
          <div class="post-item-bookmarked-icon">
            <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
