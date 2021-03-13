@@ -1,6 +1,6 @@
 <div class="main posts-show">
+  <%= render partial: 'posts/phone_post_show' %>
   <div class="post-show-container">
-
     <div class="posts-show-item-box">
       <p class="posts-show-item-content"><%= @post.content %></p>
       <p class="posts-show-item-meaning" ><%= @post.meaning %></p>
@@ -51,7 +51,7 @@
 
       <div class="posts-show-item", id="notes">
         <div class="item-header">Notes</div>
-        <p><%= @post.note %></p>
+        <%= simple_format(@post.note) %>
       </div>
     </div>
   </div>
