@@ -453,6 +453,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
     padding-top: 70px;
+    height: 100vh;
 
     .posts-index-container {
       .pagination-box {
@@ -516,7 +517,7 @@
                 }
               }
             }
-            .post-item-content {
+            .post-item-content, .personal-post-item-content {
               text-align: center;
               line-height: 70px;
               margin-left: 60px;
@@ -531,5 +532,12 @@
         }
       }
     }
+   .post-item-bookmarked-icon {
+     position: absolute;
+     position: absolute;
+     top: 5px;
+     left: 5px;
+     font-size: 40px;
+   }
   }
 }
