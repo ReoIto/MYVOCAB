@@ -3,207 +3,291 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 /* users/index ================================ */
 
-/* .mainはuser関係の全ページに適応されてる */
+/*--------------------For PC-------------------- */
+@media (min-width:770px) {
+  .users-heading {
+    font-weight: 300;
+    margin: 60px 0 20px;
+    font-size: 48px;
+    color: #bcc8d4;
+  }
 
-.users-heading {
-  font-weight: 300;
-  margin: 60px 0 20px;
-  font-size: 48px;
-  color: #bcc8d4;
-}
+  .users-index-item {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    display: table;
+    width: 100%;
+  }
 
-.users-index-item {
-  padding: 20px 30px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-  display: table;
-  width: 100%;
-}
+  .user-left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+  }
 
-.user-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
-}
+  .user-name a {
+    font-weight: 600;
+  }
 
-.user-name a {
-  font-weight: 600;
-}
+  .user-name a:hover {
+    color: #3ecdc6;
+  }
 
-.user-name a:hover {
-  color: #3ecdc6;
-}
+  .user-left {
+    float: left;
+    width: 10%;
+  }
 
-.user-left {
-  float: left;
-  width: 10%;
-}
+  .user-right {
+    width: 90%;
+    padding-left: 25px;
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+  }
 
-.user-right {
-  width: 90%;
-  padding-left: 25px;
-  text-align: left;
-  display: table-cell;
-  vertical-align: middle;
-}
+  /* users/show ================================ */
+  .user-show {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
 
-/* users/show ================================ */
-.user-show {
-  background-image: url(background_img.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-attachment: fixed;
+    .container {
+      padding-top: 100px;
+      display: flex;
 
-  .container {
-    padding-top: 100px;
-    display: flex;
+      .user-box {
+        width: 50%;
 
-    .user-box {
-      width: 50%;
+        .user {
+          max-width: 500px;
+          height: 345px;
+          margin: 0 auto;
+          padding: 50px;
+          border: 3px solid;
+          border-radius: 20px;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.6);
+          background-color: rgba(0, 0, 0, 0.8);
 
-      .user {
+
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            border: 1px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+          }
+
+          .user-name {
+            font-size: 40px;
+
+          }
+
+          .user-email {
+            font-size: 30px;
+
+          }
+        }
+      }
+
+       .btn {
+         display: block;
+         text-align: center;
+         margin-top: 30px;
+
+
+         a {
+           color: rgba(255, 255, 255, 0.6);
+           padding: 10px;
+           font-size: 25px;
+           background-color: rgba(0, 0, 0, 0.8);
+           border: 3px solid;
+           border-radius: 5px;
+
+           &:hover {
+             background-color: rgba(0,139,139 ,0.5 );
+             color: white;
+           }
+         }
+       }
+    }
+  }
+
+  /* users/edit,
+     users/password/new,
+     users/confirmations/new,
+     =============================== */
+
+  .users-edit {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+
+    .container {
+      .users-form {
         max-width: 500px;
         height: 345px;
         margin: 0 auto;
-        padding: 50px;
+        padding: 30px;
+        margin-top: 100px;
         border: 3px solid;
+        box-shadow: none;
         border-radius: 20px;
         text-align: center;
         color: rgba(255, 255, 255, 0.6);
         background-color: rgba(0, 0, 0, 0.8);
 
+        .form-item {
+          padding-top: 10px;
+          letter-spacing: 1px;
+          font-size: 15px;
 
-        img {
-          width: 100px;
-          height: 100px;
-          border-radius: 15px;
-          border: 1px solid white;
-          object-fit: cover;
-          margin-bottom: 20px;
-        }
+          label[for="image"] {
+            display: block;
+            text-align: center;
 
-        .user-name {
-          font-size: 40px;
+            .fa-images {
+              border-radius: 25px;
+              padding: 10px 20px;
+              font-size: 25px;
+              color: black;
+              background-color: rgba(255, 255, 255, 0.6);;
 
-        }
-
-        .user-email {
-          font-size: 30px;
-
-        }
-      }
-    }
-
-     .btn {
-       display: block;
-       text-align: center;
-       margin-top: 30px;
-
-
-       a {
-         color: rgba(255, 255, 255, 0.6);
-         padding: 10px;
-         font-size: 25px;
-         background-color: rgba(0, 0, 0, 0.8);
-         border: 3px solid;
-         border-radius: 5px;
-
-         &:hover {
-           background-color: rgba(0,139,139 ,0.5 );
-           color: white;
-         }
-       }
-     }
-  }
-}
-
-/* users/edit,
-   users/password/new,
-   users/confirmations/new,
-   =============================== */
-
-.users-edit {
-  background-image: url(background_img.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-attachment: fixed;
-
-  .container {
-    .users-form {
-      max-width: 500px;
-      height: 345px;
-      margin: 0 auto;
-      padding: 30px;
-      margin-top: 100px;
-      border: 3px solid;
-      box-shadow: none;
-      border-radius: 20px;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.6);
-      background-color: rgba(0, 0, 0, 0.8);
-
-      .form-item {
-        padding-top: 10px;
-        letter-spacing: 1px;
-        font-size: 15px;
-
-        label[for="image"] {
-          display: block;
-          text-align: center;
-
-          .fa-images {
-            border-radius: 25px;
-            padding: 10px 20px;
-            font-size: 25px;
-            color: black;
-            background-color: rgba(255, 255, 255, 0.6);;
-
-            &:hover {
-              cursor: pointer;
-              background-color: rgba(0,139,139 ,0.7 );
-              color: white;
+              &:hover {
+                cursor: pointer;
+                background-color: rgba(0,139,139 ,0.7 );
+                color: white;
+              }
             }
           }
-        }
 
-        input {
-          width: 80%;
-          background-color: white;
-          border: 1px solid #d8dadf;
-          padding: 10px;
-          color: #57575f;
-          font-size: 16px;
-          letter-spacing: 2px;
-          border-radius: 2px;
-          display: block;
-          margin: 0 auto;
+          input {
+            width: 80%;
+            background-color: white;
+            border: 1px solid #d8dadf;
+            padding: 10px;
+            color: #57575f;
+            font-size: 16px;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            display: block;
+            margin: 0 auto;
+          }
         }
       }
-    }
-    .btn {
-      display: block;
-      text-align: center;
-      margin-top: 30px;
+      .btn {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
 
-      input {
-        color: rgba(255, 255, 255, 0.6);
-        padding: 10px 10px 10px 15px;
-        font-size: 25px;
-        background-color: rgba(0, 0, 0, 0.8);
-        border: 3px solid;
-        border-radius: 5px;
+        input {
+          color: rgba(255, 255, 255, 0.6);
+          padding: 10px 10px 10px 15px;
+          font-size: 25px;
+          background-color: rgba(0, 0, 0, 0.8);
+          border: 3px solid;
+          border-radius: 5px;
 
-            &:hover {
-              background-color: rgba(0, 139, 139, 0.5);
-              color: white;
-            }
+              &:hover {
+                background-color: rgba(0, 139, 139, 0.5);
+                color: white;
+              }
+        }
       }
     }
   }
 }
-/* users/password/new ================================ */
+
+/*--------------------For PHONES-------------------- */
+@media (max-width:767.98px) {
+
+  // ---------------users/show ------------------------
+  .user-show {
+    .container {
+      .user-box {
+        position: relative;
+
+        .user {
+          text-align: center;
+          font-size: 20px;
+          color: white;
+          margin-top: 10px;
+
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+          }
+
+          p {
+            margin-top: 10px;
+          }
+          .user-name {}
+          .user-email {}
+        }
+        .btn {
+          display: none;
+        }
+
+        .user-edit-icon {
+          position: absolute;
+          top: -10px;
+          right: 20px;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  // -----------users/edit----------------------
+  .users-edit {
+    .container {
+      .users-form {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(0, 0, 0, 0.8);
+
+        .form-error {}
+        .form-item {
+          margin-bottom: 13px;
+          input {
+            width: 100%;
+            background-color: transparent;
+            border: 3px solid #d8dadf;
+            padding: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            letter-spacing: 1px;
+            border-radius: 5px;
+          }
+        }
+      }
+      .btn {
+        display: block;
+        text-align: center;
+        margin-top: 60px;
+        padding: 0;
+
+        input{
+          width: 100%;
+          color: rgba(255, 255, 255, 0.6);
+          padding: 10px 10px 10px 15px;
+          font-size: 25px;
+          background-color: rgba(0, 0, 0, 0.8);
+          border: 3px solid;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}
