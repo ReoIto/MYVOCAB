@@ -1,5 +1,8 @@
 <div class="main users-edit">
   <div class="container">
+    <div class="form-heading">
+      <h1>EDIT</h1>
+    </div>
     <div class="form users-form">
       <% @user.errors.full_messages.each do |message| %>
           <div class="form-error">
@@ -17,7 +20,7 @@
       </div>
       <div class="form-item">
         <%= f.label :Email %>
-        <%= f.text_field :email, value: current_user.email %>
+        <%= f.email_field :email, value: current_user.email %>
       </div>
     </div>
     <div class="btn">
