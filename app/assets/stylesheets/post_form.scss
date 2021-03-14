@@ -75,46 +75,55 @@
 /*--------------------For PHONES-------------------- */
 @media (max-width:767.98px) {
 
-  .form-heading {
-    margin: 5px 0;
-  }
+  .posts-edit, .posts-new {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 50px;
+    height: 100vh;
 
-  .post-form {
-    margin: 0 5px;
-
-    .form-item {
-      margin-bottom: 5px;
-      font-size: 14px;
-
-      input, textarea {
-        width: 100%;
-        border: 3px solid;
-        border-radius: 5px;
-        color: rgba(255, 255, 255, 0.6);
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 7px;
-      }
-
-      input {
-        text-align: center;
-      }
-
-      textarea {}
-
+    .form-heading {
+      margin: 5px 0;
     }
-    .form-item-content {
-      font-size: 45px;
 
-    }
-    .submit {
-      input {
-        color: rgba(255, 255, 255, 0.6);
-        width: 100%;
-        padding: 10px;
-        font-size: 20px;
-        background-color: rgba(0, 0, 0, 0.8);
-        border: 3px solid;
-        border-radius: 30px;
+    .post-form {
+      margin: 0 5px;
+
+      .form-item {
+        margin-bottom: 5px;
+        font-size: 16px;
+
+        input, textarea {
+          width: 100%;
+          border: 3px solid;
+          border-radius: 5px;
+          color: rgba(255, 255, 255, 0.6);
+          background-color: rgba(0, 0, 0, 0.8);
+          padding: 7px;
+        }
+
+        input {
+          text-align: center;
+        }
+
+        textarea {}
+
+      }
+      .form-item-content {
+        font-size: 45px;
+
+      }
+      .submit {
+        input {
+          color: rgba(255, 255, 255, 0.6);
+          width: 100%;
+          padding: 10px;
+          font-size: 20px;
+          background-color: rgba(0, 0, 0, 0.8);
+          border: 3px solid;
+          border-radius: 30px;
+        }
       }
     }
   }
