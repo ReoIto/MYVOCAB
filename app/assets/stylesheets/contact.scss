@@ -1,11 +1,12 @@
-.contact-page {
-  background-image: url(background_img.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-attachment: fixed;
+/*--------------------For PC-------------------- */
+@media (min-width:770px) {
 
-  .container {
+  .contact-page {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
 
     .form-heading {
       text-align: center;
@@ -49,7 +50,6 @@
           width: 100%;
           border: 3px solid;
           border-radius: 5px;
-          text-align: center;
           color: rgba(255, 255, 255, 0.6);
           background-color: rgba(0, 0, 0, 0.8);
         }
@@ -84,18 +84,16 @@
       }
     }
   }
-}
 
-// ---------------------Confirm-------------------------
+  // ---------------------Confirm-------------------------
 
-.contact-confirm-page {
-  background-image: url(background_img.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-attachment: fixed;
+  .contact-confirm-page {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
 
-  .container  {
     .form-heading {
       text-align: center;
       margin: 0 0 10px 0;
@@ -110,7 +108,7 @@
       background-color: rgba(0, 0, 0, 0.8);
 
       .form-item {
-        font-size: 27px;
+        font-size: 25px;
         padding: 0px 7px 7px 7px;
         color: white;
         border-bottom: 2px dashed;
@@ -143,41 +141,121 @@
       }
     }
   }
+
+  // ---------------------Thanks-------------------------
+
+  .contact-thanks-page {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+
+    .container {
+      .box {
+        text-align: center;
+        width: 70%;
+        border-radius: 30px;
+        padding: 30px;
+        margin: 0 auto;
+        margin-top: 100px;
+        background-color: white;
+        opacity: 0.5;
+
+        img {
+          width: 350px;
+        }
+
+        .form-heading {
+          color: black;
+          h1 {
+            font-size: 60px;
+          }
+          p {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
 }
 
-// ---------------------Thanks-------------------------
+/*--------------------For PHONES-------------------- */
+@media (max-width:767.98px) {
+  .contact-page {
+    .form-heading {}
+    .contact-form {
+      margin: 0 5px;
 
-.contact-thanks-page {
-  background-image: url(background_img.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-attachment: fixed;
+      .error {
+        color: red;
+        margin-left: 10px;
 
-  .container {
-    .box {
-      text-align: center;
-      width: 70%;
+        li {
+          margin-left: 20px;
+        }
+      }
+      .form-item {
+        margin-bottom: 8px;
+
+        label {
+          color: white;
+        }
+        input, textarea {
+          width: 100%;
+          border: 3px solid;
+          border-radius: 5px;
+          color: rgba(255, 255, 255, 0.6);
+          background-color: rgba(0, 0, 0, 0.8);
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  // ---------------------Confirm-------------------------
+  .contact-confirm-page {
+    color: white;
+
+    .form-heading {}
+    .contact-form {
+      margin: 0 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+
+      .form-item {
+        font-size: 16px;
+        padding: 0px 7px 7px 7px;
+        color: white;
+        border-bottom: 2px dashed;
+        margin-bottom: 30px;
+
+        label {
+          color: gray;
+          display: block;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  // ---------------------Thanks-------------------------
+  .contact-thanks-page {
+    img {
+      display: none;
+    }
+  }
+  .submit {
+    text-align: center;
+    margin-top: 10px;
+
+    input[type=submit] {
+      width: 90%;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 3px solid;
       border-radius: 30px;
-      padding: 30px;
-      margin: 0 auto;
-      margin-top: 100px;
-      background-color: white;
-      opacity: 0.5;
-
-      img {
-        width: 350px;
-      }
-
-      .form-heading {
-        color: black;
-        h1 {
-          font-size: 60px;
-        }
-        p {
-          font-size: 25px;
-        }
-      }
     }
   }
 }
