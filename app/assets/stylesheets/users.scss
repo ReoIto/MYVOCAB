@@ -213,6 +213,13 @@
 
   // ---------------users/show ------------------------
   .user-show {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 50px;
+    height: 100vh;
+
     .container {
       .user-box {
         position: relative;
@@ -251,6 +258,13 @@
 
   // -----------users/edit----------------------
   .users-edit {
+    background-image: url(background_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 50px;
+    height: 100vh;
+
     .container {
       .users-form {
         text-align: center;
@@ -260,6 +274,8 @@
         .form-error {}
         .form-item {
           margin-bottom: 13px;
+          font-size: 16px;
+          
           input {
             width: 100%;
             background-color: transparent;
