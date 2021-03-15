@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   def index
     @search = Post.ransack(params[:q])
     @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(14)
-    @posts = Post.all.order(created_at: :desc).kaminari_page(params[:page]).per(14)
     @post = Post.new
   end
 
