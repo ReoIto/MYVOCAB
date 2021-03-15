@@ -30,7 +30,7 @@
           <%= link_to("EDIT", "/posts/#{@post.id}/edit") %>
         </div>
         <div class="post-menu">
-          <%= link_to("DELETE", "/posts/#{@post.id}/destroy", {method:"post"}) %>
+          <%= link_to 'DELETE', "/posts/#{@post.id}/destroy", method: :post, data: { confirm: 'Are you sure?' } %>
         </div>
         <% end %>
       </div>
