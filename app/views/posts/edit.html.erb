@@ -12,41 +12,20 @@
       <%= f.text_field :content, value: @post.content %>
     </div>
     <div class="form-item">
-      <% if @post.meaning.present? %>
-        <%= f.text_field :meaning, value: @post.meaning %>
-      <% else %>
-        <%= f.text_field :meaning, placeholder: "Meaning" %>
-      <% end %>
+      <%= f.text_field :meaning, value: @post.meaning, placeholder: "Meaning" %>
     </div>
     <div class="form-item">
-      <% if @post.meaning.present? %>
-        <%= f.text_field :example, value: @post.example %>
-      <% else %>
-        <%= f.text_field :example, placeholder: "Example" %>
-      <% end %>
+        <%= f.text_field :example, value: @post.example, placeholder: "Example" %>
     </div>
     <div class="form-item">
-      <% if @post.meaning.present? %>
-        <%= f.text_field :synonyms, value: @post.synonyms %>
-      <% else %>
-        <%= f.text_field :synonyms, placeholder: "Synonyms" %>
-      <% end %>
+      <%= f.text_field :synonyms, value: @post.synonyms, placeholder: "Synonyms" %>
     </div>
     <div class="form-item">
-      <% if @post.meaning.present? %>
-        <%= f.text_field :antonyms, value: @post.antonyms %>
-      <% else %>
-        <%= f.text_field :antonyms, placeholder: "Antonyms" %>
-      <% end %>
+        <%= f.text_field :antonyms, value: @post.antonyms, placeholder: "Antonyms" %>
     </div>
     <div class="form-item">
-      <% if @post.note.present? %>
-        <%= f.text_area :note, size: "30x6", value: @post.note %>
-      <% else %>
-        <%= f.text_area:note, size: "30x6", placeholder: "Notes" %>
-      <% end %>
+      <%= f.text_area :note, size: "30x6", value: @post.note, placeholder: "Notes" %>
     </div>
-
     <div class="submit"><%= f.submit("SAVE") %></div>
     <% end %>
   </div>
