@@ -38,15 +38,12 @@
   }
 
   .posts-index-item {
-      margin-bottom: 7px;
-      padding: 5px 5px 5px 10px;
-      border: 2px;
-      border-color: darkcyan;
-      border-style: ridge;
-      border-radius: 5px;
-      background-color: rgba(0,139,139 ,0.8);
-      position: relative;
-
+    margin-bottom: 7px;
+    padding: 5px 5px 5px 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
   }
 
   .posts-index-item a {
@@ -76,6 +73,7 @@
   .post-item-username {
     float: left;
     margin-left: 2px;
+    color: white;
   }
 
   .post-item-content {
@@ -363,11 +361,9 @@
         height: 160px;
         margin-bottom: 7px;
         padding: 5px 5px 5px 10px;
-        border: 2px;
-        border-color: darkcyan;
-        border-style: ridge;
+        border: 2px solid white;
         border-radius: 5px;
-        background-color: rgba(0, 139, 139, 0.8);
+        background-color: rgba(0, 0, 0, 0.6);
         position: relative;
 
           .post-left {
@@ -413,7 +409,7 @@
             line-height: 22px;
             margin: 0;
             text-align: left;
-            color: black;
+            color: cadetblue;
           }
 
           .post-item-bookmarked-icon {
@@ -482,14 +478,13 @@
       .post-form { display: none; }
       .posts-index-box {
         .posts-index-item {
-          border: 6px;
-          border-color: darkcyan;
-          border-style: ridge;
+          border: 2px solid white;
           border-radius: 5px;
-          background-color: rgba(0, 139, 139, 0.6);
+          background-color: rgba(0, 0, 0, 0.6);
           margin-bottom: 4px;
           position: relative;
           height: 80px;
+          margin: 5px;
 
           a {
             color: ivory;
@@ -524,7 +519,7 @@
           }
           .post-item-content, .personal-post-item-content {
             text-align: center;
-            line-height: 70px;
+            line-height: 78px;
             margin-left: 60px;
             font-size: 18px;
 
@@ -538,8 +533,8 @@
     }
     .post-item-bookmarked-icon {
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: 10px;
+      left: 10px;
       font-size: 40px;
     }
   }
@@ -634,14 +629,13 @@
     .pagination-box {}
     .posts-index-box {
       .posts-index-item {
-        border: 6px;
-        border-color: darkcyan;
-        border-style: ridge;
+        border: 2px solid white;
         border-radius: 5px;
-        background-color: rgba(0, 139, 139, 0.6);
+        background-color: rgba(0, 0, 0, 0.6);
         margin-bottom: 4px;
         position: relative;
         height: 80px;
+        margin: 5px;
 
         a {
           color: ivory;
