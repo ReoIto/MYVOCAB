@@ -108,7 +108,7 @@ URL: http://www.myvocab.site/
 
 ### ER図
 
-![ER_Image](app/assets/images/ER_image.png)
+![ER_Image](app/assets/images/er_image.png)
 
 ### 各テーブルについて
 
