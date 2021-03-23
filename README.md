@@ -44,6 +44,8 @@ URL: http://www.myvocab.site/
 
 ## 使用画面のイメージ
 
+![description_Image](app/assets/images/readme_image.png)
+
 ## 使用技術
 
 - フロントエンド
