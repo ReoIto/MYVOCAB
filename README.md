@@ -64,6 +64,9 @@ URL: http://www.myvocab.site/
 
 - その他使用ツール
   - Atom
+  - draw.io
+  - Trello
+  - Slack
 
 ## 機能一覧
 
