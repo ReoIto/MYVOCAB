@@ -108,6 +108,8 @@ URL: http://www.myvocab.site/
 
 ### ER図
 
+![ER_Image](app/assets/images/ER_image.png)
+
 ### 各テーブルについて
 
 | テーブル名 | 説明 |
