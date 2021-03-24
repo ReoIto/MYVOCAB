@@ -2,7 +2,7 @@
 
 あなたが作る、あなたのための、本当に必要な英単語帳アプリです。
 
-URL: http://www.myvocab.site/
+URL: http://www.myvocab.site/top
 
 ## アプリ概要
 
