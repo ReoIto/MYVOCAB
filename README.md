@@ -44,6 +44,8 @@ URL: http://www.myvocab.site/
 
 ## 使用画面のイメージ
 
+![description_Image](app/assets/images/readme_image.png)
+
 ## 使用技術
 
 - フロントエンド
@@ -62,6 +64,9 @@ URL: http://www.myvocab.site/
 
 - その他使用ツール
   - Atom
+  - draw.io
+  - Trello
+  - Slack
 
 ## 機能一覧
 
@@ -107,6 +112,8 @@ URL: http://www.myvocab.site/
 ## DB設計
 
 ### ER図
+
+![ER_Image](app/assets/images/er_image.png)
 
 ### 各テーブルについて
 
