@@ -461,18 +461,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    background-attachment: fixed;
     padding-top: 70px;
-    height: 100vh;
+    min-height: 100vh;
 
     .posts-new-index-container {
 
       .pagination-box {
         margin-top: -15px;
-
-        .pagination {
-          display: block !important;
-          justify-content: center !important;
-        }
       }
 
       .post-form { display: none; }
@@ -675,4 +671,14 @@
       }
     }
   }
+
+  .pagination>li>a, .pagination>li>span {
+    color: white !important;
+    background-color: darkcyan !important;
+  }
+
+  .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: rgba(0, 255, 255, 0.6) !important;
+  }
+
 }
