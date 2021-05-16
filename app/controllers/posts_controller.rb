@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   # before_action :authenticate_user
   # before_action :ensure_current_user, {only: [:edit, :update, :destroy]}
+  before_action :set_post, {only: [:edit, :show, :update, :destroy]}
 
   def index
     @search = Post.ransack(params[:q])
@@ -17,7 +18,6 @@ class PostsController < ApplicationController
 
   def show
     @id = params[:id]
-    @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
   end
@@ -32,16 +32,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(
-                    content: params[:content],
-                    meaning: params[:meaning],
-                    example: params[:example],
-                    synonyms: params[:synonyms],
-                    antonyms: params[:antonyms],
-                    note: params[:note],
-                    user_id: current_user.id,
-                    start_time: Date.today
-                    )
+    @post = Post.new(post_params)
     if @post.save
       flash[:notice] = 'New list has been created.'
       redirect_to("/posts/#{@post.user_id}/index")
@@ -52,11 +43,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(id: params[:id])
   end
 
   def update
-    @post = Post.find_by(id: params[:id])
     @post.content  = params[:content]
     @post.meaning  = params[:meaning]
     @post.example  = params[:example]
@@ -72,11 +61,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by(id: params[:id])
     @post.destroy
     flash[:notice] = 'the list has been deleted.'
     redirect_to('/posts/index')
   end
+
+  private
 
   def ensure_current_user
     @post = Post.find_by(id: params[:id])
@@ -84,5 +74,13 @@ class PostsController < ApplicationController
     return unless @post.user_id != @current_user.id
       flash[:notice] = "You don't have the authority to."
       redirect_to('/posts/index')
+  end
+
+  def set_post
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def post_params
+    params.permit(:content,:meaning, :example, :synonyms, :antonyms, :note).merge(user_id: current_user.id, start_time: Date.today)
   end
 end
