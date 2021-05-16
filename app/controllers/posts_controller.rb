@@ -5,8 +5,17 @@ class PostsController < ApplicationController
   before_action :set_post, {only: [:edit, :show, :update, :destroy]}
 
   def index
-    @search = Post.ransack(params[:q])
-    @searched_posts = @search.result(distinct: true).order(created_at: :desc).kaminari_page(params[:page]).per(14)
+    # キーワード検索した時
+    if params[:q].present?
+      q = Post.ransack(params[:q])
+      posts = q.result(distinct: true)
+    # タグ検索した時
+    elsif params[:tag_id].present?
+      posts = Tag.find(params[:tag_id]).posts
+    else
+      posts = Post.all
+    end
+    @posts = posts.order(created_at: :desc).kaminari_page(params[:page]).per(14)
     @post = Post.new
   end
 
@@ -81,6 +90,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.permit(:content,:meaning, :example, :synonyms, :antonyms, :note).merge(user_id: current_user.id, start_time: Date.today)
+    params.permit(:content,:meaning, :example, :synonyms, :antonyms, :note, tag_ids: []).merge(user_id: current_user.id, start_time: Date.today)
   end
 end
