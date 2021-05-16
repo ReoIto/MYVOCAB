@@ -53,6 +53,12 @@
         <div class="item-header">Notes</div>
         <%= simple_format(@post.note) %>
       </div>
+
+      <div class="tags">
+        <% @post.tags.each do |tag| %>
+            <%= tag.name %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
