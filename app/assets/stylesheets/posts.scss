@@ -7,10 +7,20 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    background-attachment: fixed;
+
+    select#tag_id {
+      margin-left: 545px;
+      padding: 3px 10px;
+      background-color: darkcyan;
+      color: white;
+      border: 1px solid white;
+      border-radius: 3px;
+      margin-bottom: -20px;
+    }
 
     .posts-index-container {
       background-size: 1150px 720px;
+      padding-top: 17px;
 
       .posts-new-index-container {
         display: flex;
@@ -228,6 +238,11 @@
 
   /* posts/personal_index ================================*/
 
+  /* personal_indexにはタグ検索フォームを置いていないから、posts_indexとpaddingがずれる */
+  .personal {
+    padding-top: 21px;
+  }
+
   .personal-post-item-content {
     font-size: 33px;
     text-align: center;
@@ -424,9 +439,11 @@
 
   /* posts/pagenation =========================*/
   .pagination-box {
-      width: 65%;
-      margin: 0 0 0 auto;
-      text-align: center;
+    margin: 0 0 0 auto;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    left: 60%;
   }
 
   ul.pagination {
