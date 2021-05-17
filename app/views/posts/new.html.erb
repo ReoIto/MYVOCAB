@@ -26,15 +26,14 @@
       <div class="form-item">
         <%= f.text_area :note, size: "30x6",placeholder: "Note", value: @post.note %>
       </div>
-      <div class="check_box">
-        <span>Tag</span>
+      <div class="check-box">
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-          <div>
+          <p>
             <%= tag.label do %>
               <%= tag.check_box %>
               <%= tag.text %>
             <% end %>
-          </div>
+          </p>
         <% end %>
       </div>
       <div class="submit"><%= f.submit("Add Vocab") %></div>

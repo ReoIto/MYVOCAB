@@ -6,7 +6,16 @@
     <div class="posts-new-index-container personal">
       <div class="post-form">
         <%= form_with url: "/posts/create", method: :post, local: true do |f| %>
-
+        <div class="check-box">
+          <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+            <p>
+              <%= tag.label do %>
+                <%= tag.check_box %>
+                <%= tag.text %>
+              <% end %>
+            </p>
+          <% end %>
+        </div>
         <div class="form-item form-item-content">
           <%= f.text_field :content, placeholder: "Vocab", autofocus: true %>
         </div>

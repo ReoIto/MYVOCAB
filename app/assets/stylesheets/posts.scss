@@ -273,16 +273,30 @@
     background-position: bottom;
     background-attachment: fixed;
 
-      .form-heading {
-        text-align: center;
-        margin: 0 0 10px 0;
-      }
+    .form-heading {
+      text-align: center;
+      margin: 0 0 10px 0;
+    }
 
-      .post-form {
-        margin: 0 auto;
-        width: 70%;
-        height: 650px;
+    .post-form {
+      margin: 0 auto;
+      width: 70%;
+      height: 650px;
+    }
+
+    .check-box {
+      display: flex;
+      color: white;
+      margin-top: -10px;
+
+      p {
+        border: 1px solid;
+        padding: 0 10px;
+        border-radius: 20px;
+        background-color: black;
+        margin-left: 10px;
       }
+    }
   }
 
 
