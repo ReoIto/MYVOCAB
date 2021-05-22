@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get  'posts/:id/index'   => 'posts#personal_index'
   get  'posts/:id/likes'   => 'posts#likes'
   get  'posts/new'         => 'posts#new'
-  get  'posts/:id'         => 'posts#show'
+  get  'posts/:id'         => 'posts#show', as: 'posts_show'
   post 'posts/create'      => 'posts#create'
   get  'posts/:id/edit'    => 'posts#edit'
   post 'posts/:id/update'  => 'posts#update', as: 'posts_update'
