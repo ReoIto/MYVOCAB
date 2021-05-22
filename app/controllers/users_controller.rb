@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     # カレンダーの年月情報をparamsから取得。2021-04のような状態に加工
     if params[:start_date]
       @monthly_posts_count = Post.where('start_time like ?',"%#{params[:start_date].slice(0,7)}%").count
-      binding.pry
     else
       # /posts/:idのURLの場合、params[:start_date]は無いので、当月の情報を入れる
       @monthly_posts_count = Post.where('start_time like ?', "%#{Date.today.year}-0#{Date.today.month}%").count
