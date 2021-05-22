@@ -8,11 +8,17 @@ class UsersController < ApplicationController
 
   def show
     @posts = Post.where(user_id: current_user.id)
-    # カレンダーの年月情報をparamsから取得。2021-04のような状態に加工
+    # 先月の投稿数を取得
+    @last_month_posts_count = Post.where('start_time like ?',"%#{Date.today.last_month.strftime('%Y-%m')}%").count
+    # 当月の投稿数を取得
+    @this_month_posts_count = Post.where('start_time like ?', "%#{Date.today.year}-0#{Date.today.month}%").count
+    # (カレンダーの月の表示に対応)カレンダーの年月情報をparamsから取得。2021-04のような状態に加工
     if params[:start_date]
+      @year_month = "#{params[:start_date].slice(0,4)}/#{params[:start_date].slice(5,2)}"
       @monthly_posts_count = Post.where('start_time like ?',"%#{params[:start_date].slice(0,7)}%").count
     else
       # /posts/:idのURLの場合、params[:start_date]は無いので、当月の情報を入れる
+      @year_month = "#{Date.today.year}/#{Date.today.month}"
       @monthly_posts_count = Post.where('start_time like ?', "%#{Date.today.year}-0#{Date.today.month}%").count
     end
   end
