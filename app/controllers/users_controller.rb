@@ -2,12 +2,25 @@ class UsersController < ApplicationController
 
   # before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   # before_action :forbid_login_user, {only: [:new, :create, :login_form, :sign_in]}
-  before_action :ensure_correct_user, { only: [:edit, :update,] }
   # protect_from_forgery :except => [:create]
+  before_action :ensure_correct_user, { only: [:edit, :update,] }
+  before_action :set_user, { only: [:show, :edit, :update]}
 
   def show
-    @user = User.find_by(id: params[:id])
     @posts = Post.where(user_id: current_user.id)
+    # 先月の投稿数を取得
+    @last_month_posts_count = Post.where('start_time like ?',"%#{Date.today.last_month.strftime('%Y-%m')}%").count
+    # 当月の投稿数を取得
+    @this_month_posts_count = Post.where('start_time like ?', "%#{Date.today.year}-0#{Date.today.month}%").count
+    # (カレンダーの月の表示に対応)カレンダーの年月情報をparamsから取得。2021-04のような状態に加工
+    if params[:start_date]
+      @year_month = "#{params[:start_date].slice(0,4)}/#{params[:start_date].slice(5,2)}"
+      @monthly_posts_count = Post.where('start_time like ?',"%#{params[:start_date].slice(0,7)}%").count
+    else
+      # /posts/:idのURLの場合、params[:start_date]は無いので、当月の情報を入れる
+      @year_month = "#{Date.today.year}/#{Date.today.month}"
+      @monthly_posts_count = Post.where('start_time like ?', "%#{Date.today.year}-0#{Date.today.month}%").count
+    end
   end
 
   # def new
@@ -33,11 +46,9 @@ class UsersController < ApplicationController
   # end
 
   def edit
-    @user = User.find_by(id: params[:id])
   end
 
   def update
-    @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
 
@@ -55,8 +66,10 @@ class UsersController < ApplicationController
       end
   end
 
-  def login_form
+  private
 
+  def set_user
+    @user = User.find_by(id: params[:id])
   end
 
   def login
@@ -83,5 +96,4 @@ class UsersController < ApplicationController
       redirect_to("/posts/index")
     end
   end
-
 end
