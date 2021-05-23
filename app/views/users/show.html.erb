@@ -7,11 +7,20 @@
         <% else %>
           <%= image_tag "/user_images/default_user_image.gif" %>
         <% end %>
-        <p class="user-name"><%= @user.name %></p>
-
-        <% if @user.id == current_user.id %>
-          <p class="user-email"><%= @user.email %></p>
-        <% end %>
+        <div class="user-info">
+          <p class="user-name">Name : <%= @user.name %></p>
+          <% if @user.id == current_user.id %>
+            <p class="user-email">Email : <%= @user.email %></p>
+          <% end %>
+        </div>
+        <div class="posts-count">
+          <ul>
+            <li><span>ALL :</span><%= @posts.count %> VOCAB</li>
+            <li><span>LAST MONTH :</span><%= @last_month_posts_count %> VOCAB</li>
+            <li><span>THIS MONTH :</span><%= @this_month_posts_count %> VOCAB</li>
+            <li><span><%= @year_month %> :</span><%= @monthly_posts_count %> VOCAB</li>
+          </ul>
+        </div>
       </div>
       <% if @user.id == current_user.id %>
         <div class="btn"><%= link_to "EDIT", users_edit_path %></div>
