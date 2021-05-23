@@ -66,34 +66,41 @@
         width: 50%;
 
         .user {
-          max-width: 500px;
-          height: 345px;
-          margin: 0 auto;
           padding: 50px;
           border: 3px solid;
           border-radius: 20px;
-          text-align: center;
           color: rgba(255, 255, 255, 0.6);
           background-color: rgba(0, 0, 0, 0.8);
 
-
           img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
+            float: left;
             border-radius: 15px;
             border: 1px solid white;
             object-fit: cover;
             margin-bottom: 20px;
           }
 
-          .user-name {
-            font-size: 40px;
+          .user-info {
+            margin-left: 20px;
+            display: inline-block;
 
+            p { margin: 0;}
+            .user-name { font-size: 30px; }
+            .user-email { font-size: 25px; }
           }
 
-          .user-email {
-            font-size: 30px;
+          .posts-count {
+            margin-top: 45px;
+            text-align: right;
+            font-size: 20px;
 
+            ul {
+              list-style: none;
+
+              span { padding-right: 20px }
+            }
           }
         }
       }
@@ -275,7 +282,7 @@
         .form-item {
           margin-bottom: 13px;
           font-size: 16px;
-          
+
           input {
             width: 100%;
             background-color: transparent;
