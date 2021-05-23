@@ -58,12 +58,13 @@
     background-position: bottom;
     background-attachment: fixed;
 
-    .container {
-      padding-top: 100px;
+    .user-show-container {
       display: flex;
 
       .user-box {
-        width: 50%;
+        width: 30%;
+        margin: 0 auto;
+        padding-top: 80px;
 
         .user {
           padding: 50px;
@@ -82,24 +83,36 @@
             margin-bottom: 20px;
           }
 
-          .user-info {
-            margin-left: 20px;
-            display: inline-block;
-
-            p { margin: 0;}
-            .user-name { font-size: 30px; }
-            .user-email { font-size: 25px; }
+          p {
+            margin: 0;
+            padding-left: 10px;
           }
 
-          .posts-count {
-            margin-top: 45px;
-            text-align: right;
+          .user-name {
+            font-size: 30px;
+            line-height: 60px;
+            display: inline-block;
+          }
+
+          .user-email {
             font-size: 20px;
+            display: inline-block;
+          }
+
+
+          .posts-count {
+            margin-top: 60px;
+            text-align: right;
+            font-size: 25px;
 
             ul {
               list-style: none;
+              li {
+                border-bottom: 1px dashed;
+                margin-bottom: 20px;
 
-              span { padding-right: 20px }
+                span { padding-right: 20px }
+              }
             }
           }
         }
@@ -112,6 +125,7 @@
 
 
          a {
+           display: block;
            color: rgba(255, 255, 255, 0.6);
            padding: 10px;
            font-size: 25px;

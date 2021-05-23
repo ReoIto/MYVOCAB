@@ -1,5 +1,5 @@
 <div class="main user-show">
-  <div class="container">
+  <div class="user-show-container">
     <div class="user-box">
       <div class="user">
         <% if @user.image_name.present? %>
@@ -7,12 +7,12 @@
         <% else %>
           <%= image_tag "/user_images/default_user_image.gif" %>
         <% end %>
-        <div class="user-info">
-          <p class="user-name">Name : <%= @user.name %></p>
-          <% if @user.id == current_user.id %>
-            <p class="user-email">Email : <%= @user.email %></p>
-          <% end %>
-        </div>
+
+        <p class="user-name"><%= @user.name %></p>
+        <% if @user.id == current_user.id %>
+          <p class="user-email"><%= @user.email %></p>
+        <% end %>
+
         <div class="posts-count">
           <ul>
             <li><span>ALL :</span><%= @posts.count %> VOCAB</li>
@@ -34,6 +34,7 @@
       <%= month_calendar events: @user.posts do |date, posts| %>
         <%= date %>
         <% posts.each do |post| %>
+          <%= link_to post.content, posts_show_path(post), {class: "calendar-post-link"} %>
         <% end %>
       <% end %>
     </div>
