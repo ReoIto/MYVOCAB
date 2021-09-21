@@ -13,16 +13,16 @@ class PostsController < ApplicationController
     elsif params[:tag_id].present?
       posts = Tag.find(params[:tag_id]).posts
     else
-      posts = Post.all
+      posts = Post.eager_load(:user)
     end
     @posts = posts.order(created_at: :desc).kaminari_page(params[:page]).per(14)
     @post = Post.new
   end
 
   def personal_index
-    @post = Post.find_by(user_id: params[:id])
-    @personal_posts = Post.where(user_id: current_user.id)
-    @personal_posts = @personal_posts.order(created_at: :desc).kaminari_page(params[:page]).per(14)
+    # @personal_posts = Post.where(user_id: current_user.id)
+    posts = Post.joins(:user).where(users: { id: params[:id]})
+    @personal_posts = posts.order(created_at: :desc).kaminari_page(params[:page]).per(14)
   end
 
   def show
